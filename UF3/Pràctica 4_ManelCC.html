@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<input type="text" id="numbers" class="numbers" name="numbers">
+<input type="button" value="Ex1" onclick="ex1()">
+<input type="button" value="Ex2" onclick="ex2()">
+<input type="button" value="Ex3" onclick="ex3()">
+<input type="button" value="Ex4" onclick="ex4()">
+<input type="button" value="Ex5" onclick="ex5()">
+<input type="button" value="Ex6" onclick="ex6()">
+
+<script type="text/javascript">
+	function ex1(){
+		var patro=  /^([-0-9]+\.?[0-9]{0,2})$/;
+		var num1 = document.getElementById("numbers").value;
+		if(num1.match(patro)){alert("Valid el num "+num1);}
+		else{alert("NO VALID")}
+	}
+	function ex2(){
+		var patro=  /^[0-9]+[,][0-9]+$/;
+		var num1 = document.getElementById("numbers").value;
+		if(num1.match(patro)){alert("Valid el num "+num1);}
+		else{alert("NO VALID")}
+	}
+	function ex3(){
+		var patro=  /^[0-9]+[,|.][0-9]+$/;
+		var num1 = document.getElementById("numbers").value;
+		if(num1.match(patro)){alert("Valid el num "+num1);}
+		else{alert("NO VALID")}
+	}
+	function ex4(){
+		var patro=  /^[6|9]{8}\d$/;//o puede ser: /^[6|9][0-9]{8}$/
+		var num1 = document.getElementById("numbers").value;
+		if(num1.match(patro)){alert("Valid el num "+num1);}
+		else{alert("NO VALID")}
+	}
+	function ex5(){
+		var patro=  /^[5-9][0-9]{4}$/;
+		var num1 = document.getElementById("numbers").value;
+		if(num1.match(patro)){alert("Valid el num "+num1);}
+		else{alert("NO VALID")}
+	}
+	function ex6(){
+		var patro=  /^[0-9][0-9]{7}[A-Z]$/;
+		var num1 = document.getElementById("numbers").value;
+		if(num1.match(patro)){alert("Valid el num "+num1);}
+		else{alert("NO VALID")}
+	}
+
+
+
+</script>
+</body>
+</html>

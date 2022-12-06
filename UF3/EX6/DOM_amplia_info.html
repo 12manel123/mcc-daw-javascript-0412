@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exercici2 - DOM - Gestió de classes i atributs</title>
+    <style type="text/css">
+      .ocult { display: none; }
+      .visible { display: inline; }
+    </style>
+
+    <script type="text/javascript">
+		
+		function mostra(){
+			if(document.getElementById("adicional").className=="visible"){
+				document.getElementsByClassName("visible")[0].className="ocult";
+			}
+			else {
+				document.getElementsByClassName("ocult")[0].className="visible";
+			}
+		}		
+    </script>
+</head>
+
+<body>
+<p id="text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed mattis enim vitae orci. Phasellus libero. Maecenas nisl arcu, consequat congue, commodo nec, commodo ultricies, turpis. Quisque sapien nunc, posuere vitae, rutrum et, luctus at, pede. Pellentesque massa ante, ornare id, aliquam vitae, uscaswuyga dyguwd dbawdiu iauhltrices porttitor, pede. <span id="adicional" class="ocult">Nullam sit amet nisl elementum elit convallis malesuada. Phasellus magna sem, semper quis, faucibus ut, rhoncus non, mi. Duis pellentesque, felis eu adipiscing ullamcorper, odio urna consequat arcu, at posuere ante quam non dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis scelerisque. Donec lacus neque, vehicula in, eleifend vitae, venenatis ac, felis. Donec arcu. Nam sed tortor nec ipsum aliquam ullamcorper. Duis accumsan metus eu urna. Aenean vitae enim. Integer lacus. Vestibulum venenatis erat eu odio. Praesent id metus.</span></p>
+<a id="enllaç" href="#" onclick="mostra(); return false;">Segueix llegint</a>
+</body>
+</html>

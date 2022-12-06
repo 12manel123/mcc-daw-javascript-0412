@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Compra un cotxe</title>
+	<meta charset="utf-8">
+	<style>
+		div{
+			border: 2px solid black;
+			padding: 10px;
+			width:60%;
+			margin:10px auto;
+			background-color: lightyellow;
+		  }
+		h4,p{margin: 0}	
+		#dvTotal{background-color: chartreuse}
+	</style>
+</head>
+<body>
+	<form>
+		
+		<div>
+		<h4>Motor</h4>		
+		<select id="motor" name="motor">
+			<option value="b">bencina</option>
+			<option value="d">dièsel</option>
+			<option value="h">híbrid</option>
+		</select>
+		
+		</div>
+	<div>
+		<h4>Portes</h4>
+		<select id="model" name="model">
+			<option value="B">Altres/Base</option>
+			<option value="3">3 portes</option>
+			<option value="5">5 portes familiar</option>
+		</select>
+		</div>
+		<div>
+		<h4>Colors</h4>
+		<label><input type="radio" name="color" value="vermell" checked>Vermell</label><br>
+		<label><input type="radio" name="color" value="verd">Verd</label><br>
+		<label><input type="radio" name="color" value="taronja">Taronja</label><br>
+		<label><input type="radio" name="color" value="blanc">Blanc</label><br>
+		<label><input type="radio" name="color" value="negre">Negre</label>
+	</div>
+    <div> 
+		<h4>Complements</h4>
+		<label><input type="checkbox" id="metalitzada" name="metalitzada" value="750"> Pintura metal·litzada</label><br>
+		<label><input type="checkbox" id="llantes" name="llantes" value="200"> Llantes d'aliatge</label><br>
+		<label><input type="checkbox" id="climatitzador" name="climatitzador" value="800"> Climatitzador</label><br>
+		<label><input type="checkbox" id="gps" name="gps" value="350"> GPS</label><br>
+		<label><input type="checkbox" id="dvd" name="dvd" value="800" disabled> DVD</label>		
+	</div>
+	<div id="dvTotal">
+		<p style="font-size: 2em">Preu Total			
+		<input type="text" id="total" readonly size="10" style="font-size:1.5em;background-color: chartreuse;border-style: none;color:red"> 			
+
+		</p>
+	</div>
+	</form>
+	<script src="cotxeB.js"></script>
+</body>
+</html>

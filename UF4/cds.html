@@ -1,0 +1,22 @@
+<center><button onclick="mostrar()"><h1>CD!</h1></button>
+<table id="tabla" border="1"></table></center>
+
+<script>
+    function mostrar(){
+        var cds,xhr,text
+        xhr = new XMLHttpRequest();
+        xhr.open("GET", "cd_catalog.xml", false);
+        xhr.send();
+        text = xhr.responseXML; 
+        cds = text.getElementsByTagName("CD");
+        table="<tr><th>Artista</th><th>Títol</th></tr>";
+        for (i = 0; i <cds.length; i++) { 
+          table += "<tr><td>";
+          table += cds[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue;
+          table += "</td><td>";
+          table +=  cds[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue;
+          table += "</td></tr>";
+        }
+    document.getElementById("tabla").innerHTML = table;
+    }
+</script>

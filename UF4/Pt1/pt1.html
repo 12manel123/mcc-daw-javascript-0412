@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1>Seccio de moda de zara</h1>
+	<h3>Temporada</h3>
+	<p>Tria els botons per seleccionar la temporada</p>
+<input type="button" value="Primavera" onclick="CargaPrimavera()"><input type="button" value="Estiu"><input type="button" value="Tardor"><input type="button" value="Hivern">
+
+<script type="text/javascript">
+	function CargaPrimavera(){
+		alert("a");
+		ajx =new XMLHttpRequest();
+		alert("v");
+		xhr.onreadystatechange = function(){
+			alert("p")	
+		}
+	}
+</script>
+
+<div id="midiv">
+         <h2>Clica el botó i Ajax canviarà el text</h2>
+        <button id="CargarContingut">Pulsam</button>
+    </div>
+    <script>
+        document.getElementById("CargarContingut").addEventListener("click",CargaContingut);
+    function CargaContingut(){
+     
+        xhr=new XMLHttpRequest();
+        xhr.onreadystatechange =  function(){
+            if (this.readyState == 4 && this.status == 200){
+                document.getElementById("midiv").innerHTML = this.responseText;
+            }
+        };   
+
+        xhr.open("GET","miprimerajax.txt",true);
+        xhr.send();
+        //document.getElementById('midiv').innerHTML= xhr.responseText;
+    }
+    </script>
+</body>
+</html>

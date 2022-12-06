@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<script>
+	function buscar(nom) {
+		if(nom.length == 0 ){
+			document.getElementById("reco").innerHTML="";
+			return;
+		}
+		else{
+			var xmlhttp = new XMLHttpRequest();
+			xmlhttp.onreadystatechange=function(){
+				if(this.readyState ==4 && this.status == 200){
+					document.getElementById("reco").innerHTML=this.responseText;
+				}
+			};
+
+			xmlhttp.open("GET","pt3.php?q="+nom,true);
+			xmlhttp.setRequestHeader("content-type","application/x-www-form-unlencoded");
+			xmlhttp.send();
+		}
+	}
+</script>
+<body>
+<form><p>Nom:</p><input type="text" onkeyup="buscar(this.value)"></form>
+<p>Recomenacio: <span id="reco"></span></p>
+
+
+
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style type="text/css">
+	div#dies{
+		visibility:hidden;
+	}
+</style>
+
+
+<!-----------------------------------------------------EXERCICI 1, ITALIA ----------------------------------->
+<body><h1>EX1:</h1>
+<h2>Viatge a Itàlia</h2>
+	<p>Italia, país europeu amb una llarga...</p>
+	<input type="checkbox" id="detalls">Mes detalls
+	<div id="dies">
+		<ol><li>er Dia: Roma</li>
+			<li>on Dia: Florencia</li>
+			<li>er Dia: Milan</li></ol>
+	</div>
+	<script type="text/javascript">
+		var detalls = document.getElementById("detalls");
+		detalls.onclick = function() {
+			if (detalls.checked == true) {dies.style.visibility = "visible";}
+			else {dies.style.visibility = "hidden";}
+		}
+	</script>
+
+
+	<!-------------------------------------------- EXERCICI 2, FORMULARI --------------------------->
+<hr><h1>EX2:</h1>
+	<h2>Formulari</h2>
+	<form id="formulari" action="#">
+		<label for="nom">Nom: </label> <input type="text" id="nom" name="nom" required><br>
+		<label for="cognoms">Cognoms:</label> <input type="text" id="cognoms" name="cognoms" required><br>
+		<label for="dni">DNI:</label> <input type="text" id="dni" name="dni" required maxlength="9"><br>
+		<label for="telef">Telefon:</label> <input type="number" id="telef" name="telef" required maxlength="9"><br>
+		<label for="email">Email:</label> <input type="text" id="email" name="email" required><br>
+		<label for="codipostal">Codi Postal:</label> <input type="number" id="codiP" name="codiP" required maxlength="5" ><br>
+		<br>Des de quina oficina desitja tramitar la petició?<br><input type="radio" id="tarragona" name="city" value="tarragona" required>
+		<label for="tarragona">Tarragona</label><br>
+		<input type="radio" id="barcelona" name="city" value="barcelona" required>
+		<label for="barcelona">Barcelona</label><br>
+		<input type="radio" id="madrid" name="city" value="madrid" required>
+		<label for="madrid">Madrid</label><br><br>
+		<input type="submit" value="Enviar">
+	</form>
+
+	<script type="text/javascript">
+		document.getElementById("formulari").onsubmit = function(e) {
+			var dni = document.getElementById("dni").value;
+			var telef = document.getElementById("telef").value;
+			var email = document.getElementById("email").value;
+			var codiP = document.getElementById("codiP").value;
+			var radio;
+			if (validarDNI(dni) && validarTelefon(telef) && validarEmail(email) && validarCodiPostal(codiP)) {//Si els valors no son false executara el programa i redireccionara amb el action
+				if (document.getElementById("tarragona").checked == true) {radio = document.getElementById("tarragona").value;}
+				if (document.getElementById("barcelona").checked == true) {radio = document.getElementById("barcelona").value;}
+				if (document.getElementById("madrid").checked == true) {radio = document.getElementById("madrid").value;}
+				document.getElementById("formulari").action = radio+".html";
+			}
+			else {alert("ERROR");}
+		}
+
+		function validarDNI(dni){//La funcio de vlaidar DNI esta comprimida i treta de anteriors practiques
+			if (dni.length!=9){return false;}//Si el valor dni est apassat es mes larg que 9 llavors retorna fals
+			var lletres="TRWAGMYFPDXBNJZSQVHLCKE";
+			var numeros=dni.substr(0,8);
+			var lletra=dni[8].toUpperCase();
+			numeros=parseInt(numeros);
+			numeros=numeros%23;
+			if (lletres[numeros]!=lletra){return false;}//Si la pocicio del substr que es el num que s'ha de treure per comprovar i passat per %23, es igual a la lletra, retornara true
+			else {return true;}
+		}
+
+		function validarTelefon(telef) {//Fucnio per validar el telefon
+			if (telef.length!=9){return false;}//Si el valor telef que es el valor passat per formulari es mes larg que 9 llavors retorna fals
+			if (!parseInt(telef)) {return false;}//I si el valor no es vaor numeric terorna fals
+			return true;
+		}
+
+		function validarEmail(email) {//Funcio per comprovar la estructura del correu
+			var pattern = /[a-zA-Z0-9]+[@][a-zA-Z]+.com/g; //Es la unica forma que he trovat per validar un correu i solament inserint el .com en el final
+			if (email.match(pattern)) {return true;}
+			else {return false;}
+		}
+
+		function validarCodiPostal(codiP) {//Funcio per comprovar el codi postal
+			if (codiP.length != 5) {return false;}//si el valor pasat no te la longitud de 5, retornara false
+			if (parseInt(codiP)) {return true;}//Si el valor no es numeric, retornara falç
+			else {return false;}
+		}
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<h2>Nou Formulari</h2>
+
+<form id="formulari" method="GET">
+		<label for="nom">Nom: </label> <input type="text" id="nom" name="nom" required maxlength="8"><br>
+		<label for="contra1">Contrasenya:</label> <input type="password" id="contrasenya" name="contrasenya" required><br>
+		<label for="contra2">Repetir contrasenya:</label> <input type="password" id="rcontrasenya" name="rcontrasenya" required><br>
+		<label for="idioma">Idioma:</label>
+			<select id="idioma" name="idioma" required>
+				<option>Catala</option>
+				<option>Castella</option>
+				<option>Ingles</option>
+			</select>
+		<br>
+		<label for="email">Email:</label> <input type="text" id="email" name="email" required>
+		<input type="checkbox" name="publicitat" id="publicitat"> Vui rebre publicitat<br>
+		<input type="number" id="telef" name="telef" required length="9">
+
+		Telèfon: <input type="text" id="telefon"><br><br>
+		Codi Postal:<input type="text" id="postal"><br><br>
+		Data de naixement: <input type="text" id="data"><br><br>
+
+		<br>Genere?<br><input type="radio" id="home" name="genere" value="home" required>
+		<label for="home">Home</label><br>
+		<input type="radio" id="dona" name="genere" value="dona" required>
+		<label for="dona">Dona</label><br>
+		<input type="radio" id="binari" name="genere" value="binari" required>
+		<label for="binari">No binari</label><br><br>
+		<input type="submit" value="Enviar">
+</form>
+
+<script type="text/javascript">
+		document.getElementById("formulari").onsubmit = function(e) {
+			var contrasenya = document.getElementById("contrasenya").value;
+			var rcontrasenya = document.getElementById("rcontrasenya").value;
+			var email = document.getElementById("email").value;
+			var telefon = document.getElementById("telefon").value;
+			var postal = document.getElementById("postal").value;
+			var data = document.getElementById("data").value;
+
+
+			else if (!(/^\d{9}$/.test(telefon))) {
+				alert("No es correcte");
+			}
+			else if (!(/^\d{5}$/.test(postal))) {
+				alert("No es correcte");
+			}
+			else if (!(/^([012][0-9]|[3][01])\/[0-1][1-2]\/\d{4}$/.test(data))) {
+				alert("No es correcte");
+			}
+
+			if (validarContrasenya(contrasenya,rcontrasenya) && (/^\d{9}$/.test(telefon)) && (!(/^\d{5}$/.test(postal))&& (!(/^([012][0-9]|[3][01])\/[0-1][1-2]\/\d{4}$/.test(data)) && validarEmail(email)) {alert("VALIDADO CORRECTAMENTE");}
+			else {alert("ERROR");}
+		}
+
+		function validarContrasenya(contrasenya,rcontrasenya){
+			if (contrasenya==rcontrasenya){return true;}
+			else {return false;}
+		}
+
+		function validarEmail(email) {
+			var pattern = /[a-zA-Z0-9]+[@][a-zA-Z]+.[a-z]{0,3}$/;
+			if (email.match(pattern)) {return true;}
+			else {return false;}
+		}
+	</script>
+
+</body>
+</html>

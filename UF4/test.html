@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style type="text/css">
+        
+    </style>
+</head>
+<body>
+
+<div id="cuerpo">
+    <h1 id="titol">Seccio de moda de zara</h1>
+    <h3 id="subtitol">Temporada</h3>
+    <p>Tria els botons per seleccionar la temporada</p></div>
+<input type="button" id="CargarPrimavera" value="primavera"><input type="button" id="CargarEstiu" value="estiu"><input type="button" id="CargarTardor" value="tardor"><input type="button" id="CargarHivern" value="hivern"><input type="button" id="CargarNada" value="esborrar">
+
+<script type="text/javascript">
+        document.getElementById("CargarEstiu").addEventListener("click",CargaContingut);
+        document.getElementById("CargarTardor").addEventListener("click",CargaContingut);
+        document.getElementById("CargarPrimavera").addEventListener("click",CargaContingut);
+        document.getElementById("CargarHivern").addEventListener("click",CargaContingut);
+        document.getElementById("CargarNada").addEventListener("click",CargaContingut);
+
+
+    function CargaContingut(){
+        xhr=new XMLHttpRequest();
+        xhr.onreadystatechange =  function(){
+            if (this.readyState == 4 && this.status == 200){
+                var  valor=this.responseText.split(",");
+ 
+                document.getElementById("subtitol").innerHTML = "Temporada "+valor[0];
+                document.getElementById("cuerpo").style.backgroundColor=valor[1];
+                document.getElementById("titol").style.color=valor[2];
+                document.getElementById("subtitol").style.color=valor[3];
+
+
+            }
+        };   
+
+        xhr.open("GET","test.php?epoca="+this.value,true);
+        xhr.send();
+    }
+</script>
+</body>
+</html>

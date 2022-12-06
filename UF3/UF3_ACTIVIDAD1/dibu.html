@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#dibu{position:absolute;}
+	</style>
+	<script>
+		function mueve(){
+			//d=document.getElementById("dibu")
+			x=parseInt(Math.random()*window.innerWidth-128)+64
+			y=parseInt(Math.random()*window.innerHeight-128)+64
+			document.getElementById("dibu").style.left=x+"px"
+			document.getElementById("dibu").style.top=y+"px"		
+		}
+	</script>
+</head>
+<body>
+	<img src="bola.png" id="dibu" onmouseover="mueve()">
+</body>
+</html>

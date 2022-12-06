@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+ 	<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+	<title></title>
+</head>
+
+<style>
+div {
+width: 100px;
+height: 100px;
+border: 1px solid black;
+}
+.blanc {
+background-color: white;
+}
+.vermell {
+background-color: red;
+}
+.groc {
+background-color: yellow;
+}
+</style>
+EX1<hr>
+<div id="proves" tabindex=1></div>
+<script type="text/javascript">
+	document.addEventListener('keydown',(event)=>{
+		var name = event.key;
+		if(name=='V'){
+			document.getElementById('proves').className = 'blanc';
+		}
+		if(name=='G'){
+			document.getElementById('proves').className = 'vermell';
+		}
+		if(name=='B'){
+			document.getElementById('proves').className = 'groc';
+		}
+
+	})
+</script>
+<hr>EX2<hr>
+<script type="text/javascript">
+var preu=0;
+
+function motor(){
+	txt=document.formu.llista.options[document.formu.llista.selectedIndex].text;
+	if(txt=="Diesel"){
+		preu=13500;
+		document.getElementById("numero").innerHTML=13500; 
+		document.getElementById("motor").innerHTML="Diesel";
+	}
+	else if(txt=="Hibrid"){
+		preu=15000;
+		document.getElementById("numero").innerHTML=15000; 
+		document.getElementById("motor").innerHTML="Hibrid";
+	}
+	else if(txt=="Gasolina"){
+		preu=12000;
+		document.getElementById("numero").innerHTML=12000; 
+		document.getElementById("motor").innerHTML="Gasolina";
+	}
+	else{alert("Elegeix correctament");}
+}
+
+function portes(){
+	txt=document.formu.porta.options[document.formu.porta.selectedIndex].text;
+	if(txt=="3"){
+		var antic = document.getElementById('portes').innerHTML;
+		var motor = document.getElementById('motor').innerHTML;
+		var preus = document.getElementById('numero').innerHTML;
+		if(motor=="Gasolina"){
+			if(antic=="5"){preu=preu-1500}
+			if(antic=="Altres"){preu=preu+1500}
+			document.getElementById("numero").innerHTML=preu-2000; 
+			document.getElementById("portes").innerHTML="3";
+			preu=preu-2000;
+		}
+		else{
+			alert("Ha de ser gasolina per aplicar la oferta");
+		}
+	}
+	else if(txt=="5"){
+		var antic = document.getElementById('portes').innerHTML;
+		if(antic=="3"){preu=preu+2000}
+		if(antic=="Altres"){preu=preu-2000}
+		document.getElementById("numero").innerHTML=preu+1500; 
+		preu=preu+1500;
+		document.getElementById("portes").innerHTML="5";
+	}
+	else{
+		document.getElementById("portes").innerHTML="Altres";
+		document.getElementById("numero").innerHTML=preu; 
+	}
+}
+
+function fcolor(){
+	txt=document.formu.color.options[document.formu.color.selectedIndex].text;
+	if(txt=="Vermell"){
+		var antic = document.getElementById('color').innerHTML;
+		if(antic=="Blanc"){preu=preu-500}
+		if(antic=="Negre"){preu=preu-600}
+		document.getElementById("color").innerHTML="Vermell";
+	}
+	else if(txt=="Verd"){
+		var antic = document.getElementById('color').innerHTML;
+		if(antic=="Blanc"){preu=preu-500}
+		if(antic=="Negre"){preu=preu-600}
+		document.getElementById("color").innerHTML="Verd";
+	}
+	else if(txt=="Taronja"){
+		var antic = document.getElementById('color').innerHTML;
+		if(antic=="Blanc"){preu=preu-500}
+		if(antic=="Negre"){preu=preu-600}
+		document.getElementById("color").innerHTML="Taronja";
+	}
+	else if(txt=="Blanc"){
+		var antic = document.getElementById('color').innerHTML;
+		if(antic=="Negre"){preu=preu-600}	
+		document.getElementById("numero").innerHTML=preu+500; 
+		document.getElementById("color").innerHTML="Blanc";
+	}
+	else if(txt=="Negre"){
+		var antic = document.getElementById('color').innerHTML;
+		if(antic=="Blanc"){preu=preu-500}	
+		document.getElementById("numero").innerHTML=preu+500; 
+		document.getElementById("color").innerHTML="Negre";
+	}
+}
+
+function fpintura(){
+	txt=document.formu.pintura.options[document.formu.pintura.selectedIndex].text;
+	if(txt=="Pintura metalizada"){
+		var color = document.getElementById('color').innerHTML;
+		if(color=="Vermell"||color=="Verd"||color=="Taronja"){
+			var antic = document.getElementById('pintura').innerHTML;
+			if(antic=="Vermell"||antic=="Verd"||antic=="Taronja"){preu=preu-750}	
+			document.getElementById("numero").innerHTML=preu+750; 
+			preu=preu+750;
+			document.getElementById("pintura").innerHTML="Pintura metalizada";}
+		else{
+			alert("Ha de ser de color verd, vermell o taronja");
+		}
+	}
+	else if(txt=="Sense"){
+		var antic = document.getElementById('pintura').innerHTML;
+		if(antic=="Pintura metalizada"){preu=preu+750}	
+		var preus = document.getElementById('numero').innerHTML;
+		document.getElementById("numero").innerHTML=preu; 
+		document.getElementById("pintura").innerHTML="Sense";
+	}
+	else{alert("Elegeix correctament");
+	}
+}
+
+function fllantes(){
+	txt=document.formu.llantes.options[document.formu.llantes.selectedIndex].text;
+	if(txt=="Llantes aliatge"){
+		
+		document.getElementById("numero").innerHTML=preu+200; 
+		preu=preu+200;
+		document.getElementById("llantes").innerHTML="LLantes aliatge";
+
+	}
+	else if(txt=="Sense"){
+		var antic = document.getElementById('llantes').innerHTML;
+		if(antic=="LLantes aliatge"){preu=preu-200}	
+		document.getElementById("numero").innerHTML=preu; 
+		document.getElementById("llantes").innerHTML="Sense";
+	}
+	else{alert("Elegeix correctament");
+	}
+}
+function fclima(){
+	txt=document.formu.clima.options[document.formu.clima.selectedIndex].text;
+	if(txt=="Climatitzador"){
+		
+		document.getElementById("numero").innerHTML=preu+800; 
+		preu=preu+800;
+		document.getElementById("clima").innerHTML="Climatitzador";
+
+	}
+	else if(txt=="Sense"){
+		var antic = document.getElementById('clima').innerHTML;
+		if(antic=="Climatitzador"){preu=preu-800}	
+		document.getElementById("numero").innerHTML=preu; 
+		document.getElementById("clima").innerHTML="Sense";
+	}
+	else{alert("Elegeix correctament");
+	}
+}
+function fGPS(){
+	txt=document.formu.GPS.options[document.formu.GPS.selectedIndex].text;
+	if(txt=="GPS"){
+		
+		document.getElementById("numero").innerHTML=preu+350; 
+		preu=preu+350;
+		document.getElementById("GPS").innerHTML="GPS";
+
+	}
+	else if(txt=="Sense"){
+		var antic = document.getElementById('GPS').innerHTML;
+		if(antic=="GPS"){preu=preu-350}	
+		document.getElementById("numero").innerHTML=preu; 
+		document.getElementById("GPS").innerHTML="Sense";
+	}
+	else{alert("Elegeix correctament");
+	}
+}
+function fDVD(){
+	txt=document.formu.DVD.options[document.formu.DVD.selectedIndex].text;
+	if(txt=="DVD"){
+		var portes = document.getElementById('portes').innerHTML;
+		if(portes=="5"){
+		document.getElementById("numero").innerHTML=preu+800; 
+		preu=preu+800;
+		document.getElementById("DVD").innerHTML="DVD";
+		}
+		else{
+			alert("Nomes por ser per familars");
+		}
+
+	}
+	else if(txt=="Sense"){
+		var antic = document.getElementById('DVD').innerHTML;
+		if(antic=="DVD"){preu=preu-800}	
+		document.getElementById("numero").innerHTML=preu; 
+		document.getElementById("GPS").innerHTML="Sense";
+	}
+	else{alert("Elegeix correctament");
+	}
+}
+
+
+
+
+</script>
+Preu: <b id="numero">12000</b> | Motor: <b id="motor"></b> | Portes: <b id="portes"></b> | Color: <b id="color"></b> | Pintiura: <b id="pintura"></b> | Llantes: <b id="llantes"></b> | Llantes: <b id="llantes"></b> | Clima: <b id="clima"></b> | GPS: <b id="GPS"></b> | DVD: <b id="DVD"></b>
+<br>
+<form id="formu" name="formu">
+	<select name="llista" onchange="motor()">
+		<option></option>
+		<option>Diesel</option>
+		<option>Hibrid</option>
+		<option>Gasolina</option>
+	</select>
+
+	<select name="porta" onchange="portes()">
+		<option>Altres</option>
+		<option>3</option>
+		<option>5</option>
+	</select>
+
+	<select name="color" onchange="fcolor()">
+		<option>Vermell</option>
+		<option>Verd</option>
+		<option>Taronja</option>
+		<option>Blanc</option>
+		<option>Negre</option>
+
+	</select>
+
+	<select name="pintura" onchange="fpintura()">
+		<option></option>
+		<option>Sense</option>
+		<option>Pintura metalizada</option>
+	</select>
+
+	<select name="llantes" onchange="fllantes()">
+		<option></option>
+		<option>Sense</option>
+		<option>Llantes aliatge</option>
+	</select>
+
+	<select name="clima" onchange="fclima()">
+		<option></option>
+		<option>Sense</option>
+		<option>Climatitzador</option>
+	</select>
+
+	<select name="GPS" onchange="fGPS()">
+		<option></option>
+		<option>Sense</option>
+		<option>GPS</option>
+	</select>
+
+	<select name="DVD" onchange="fDVD()">
+		<option></option>
+		<option>Sense</option>
+		<option>DVD</option>
+	</select>
+</form>
+
+
+
+
+</html>

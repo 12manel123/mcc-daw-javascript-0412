@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dau</title>
+</head>
+<body>
+<img id="imagen" src="1.png">
+<script>
+	x=Math.floor((Math.random()*20)+5) //NUMERO DE VECES QUE GIRARÁ EL DADO
+	y=0
+	var num,numa 
+	z=setInterval(function(){dau()},140)
+	function dau(){
+		do{
+			num=Math.floor((Math.random()*6)+1) //Numero que ha salido en el dado
+		}while(numa==num) //Si ha salido el mismo que el anterior (numa) 
+		numa=num
+		document.getElementById("imagen").src=num+".png" //Cambio dibujo
+		y++
+		if(y==x)clearInterval(z)
+	}
+	
+</script>
+</body>
+</html>

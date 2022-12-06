@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Salutacio</title>
+</head>
+<body>
+<div>
+</div>
+<script>
+	x=prompt("Introdueix el teu nom")
+	d=new Date()
+	n=d.getHours()
+	if(n>6&&n<12)
+		document.getElementsByTagName("div")[0].innerHTML="Bon dia "+x
+	else if(n>13&&n<19)
+		document.getElementsByTagName("div")[0].innerHTML="Bona tarda "+x
+	else 
+		document.getElementsByTagName("div")[0].innerHTML="Bona nit "+x
+</script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+		<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script>
+		$(document).ready(Inici);
+
+		function Inici(){
+			var elegir = Math.floor(Math.random() * 2);
+			if(elegir==1){
+				var random1 = Math.floor(Math.random() * -500);
+				var random2 = Math.floor(Math.random() * -500);
+				$("img").mouseover(function(){
+					$("img").animate({left: "+="+random1,bottom: "+="+random2},2000);
+				});	
+			}
+			else{
+				var random1 = Math.floor(Math.random() * 500);
+				var random2 = Math.floor(Math.random() * 500);
+				$("img").mouseover(function(){
+					$("img").animate({left: "+="+random1,bottom: "+="+random2},2000);
+				});	
+			}
+
+
+			
+
+
+		}
+
+	</script>
+
+
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+  
+	<style>
+			div div {
+				width: 400px;
+				height: 75px;
+				border: 1px solid black;
+				background-color: rgb(200, 255, 200);
+				padding: 4px;
+				margin-bottom: 1em;
+			}
+
+			div div:hover {
+				background-color: rgb(100, 255, 100);
+			}
+
+			div div h3 {
+				margin: 0px;
+			}
+			button{
+				position: relative;
+			}
+			div{
+				position: relative;
+			}
+			img{
+				position: relative;
+				  left: 500px;
+			}
+		</style>
+
+	<title>UF3-Ex1-ManelCC</title>
+</head>
+<body>
+<div>	
+<div id="element1" onclick="oncli()"><h3>Onclick</h3>Prova a fer click</div>
+<div id="element2" ondblclick="ondblcli()"><h3>Onblclick</h3>Prova a fer doble click</div>
+<div id="element3" onmousedown="onmoused()"><h3>Onmousedown</h3>Prova a mantenir presionat</div>
+<div id="element4" onmouseup="onmouseu()"><h3>Onmouseup</h3>Prova a deixar despres de presionar</div>
+<div id="element5" onmousemove="onmousem()"><h3>Onmousemove</h3>Prova a vindre</div>
+<div id="element6" onmouseover="onmouseov()" onmouseout="onmouseou()"><h3>Onmouseover / Onmouseout</h3>Prova a vindre</div>
+</div>
+<hr>
+<div style="background-color: red;width: 50px;height: 50px" onmouseover="document.body.style.backgroundColor = 'red'"></div>
+<div style="background-color: green;width: 50px;height: 50px" onmouseover="document.body.style.backgroundColor = 'green'"></div>
+<div style="background-color: blue;width: 50px;height: 50px" onmouseover="document.body.style.backgroundColor = 'blue'"></div>
+<div style="background-color: yellow;width: 50px;height: 50px" onmouseover="document.body.style.backgroundColor = 'yellow'"></div>
+<div style="background-color: black;width: 50px;height: 50px" onmouseover="document.body.style.backgroundColor = 'black'"></div>
+<hr>
+
+
+<script>
+function oncli(){
+	document.getElementById("element1").style.backgroundColor = "green";    
+	document.getElementById("element1").innerHTML="<h3>Onclick</h3>Has fet clic amb el ratolí amb el botó"
+}
+
+function ondblcli(){
+	document.getElementById("element2").style.backgroundColor = "green";    
+	document.getElementById("element2").innerHTML="<h3>Onblclick</h3>Has fet clic amb el ratolí amb el botó 2 vegades"
+}
+
+botonsMouse = [ "esquerre", "central", "dret" ];
+function onmoused(){
+	event.preventDefault();
+	document.getElementById("element3").style.backgroundColor = "green";    
+	document.getElementById("element3").innerHTML="<h3>Onmousedown</h3>Has fet clic amb el boto "+botonsMouse[event.button];
+}
+
+function onmouseu(){
+	document.getElementById("element4").style.backgroundColor = "green";    
+	document.getElementById("element4").innerHTML="<h3>Onmouseup</h3>Has fet clic amb el boto "+botonsMouse[event.button];
+}
+
+function onmousem(){
+	document.getElementById("element5").style.backgroundColor = "green";    
+	document.getElementById("element5").innerHTML="<h3>Onmousemove</h3>Has vingut :D"
+}
+
+function onmouseov(){
+	document.getElementById("element6").style.backgroundColor = "green";    
+	document.getElementById("element6").innerHTML="<h3>Onmouseover / Onmouseout</h3>Has entrat"
+}
+
+function onmouseou(){
+	document.getElementById("element6").style.backgroundColor = "green";    
+	document.getElementById("element6").innerHTML="<h3>Onmouseover / Onmouseout</h3>Has sortit"
+}
+
+</script>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+
+
+<img src="https://i.imgur.com/vXqduHG.jpeg" style="height: 50px">
+<hr>
+<script type="text/javascript">
+	ahora=new Date(); 
+hora=ahora.getHours();
+if(hora<13&&hora>7){alert("Bon dia Manel");}
+else if(hora<20&&hora>13){alert("Bona tarda Manel");}
+else{alert("Bona nit");}
+
+</script>
+</body>
+</html>

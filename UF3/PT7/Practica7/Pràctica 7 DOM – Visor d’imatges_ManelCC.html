@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+function mostrar(num){
+    document.images["imatge"].src="foto"+num+".jpg";
+    document.getElementById("peus").innerHTML=document.images["foto"+num].alt;
+}
+</script>
+
+<center>
+<img src='foto1.jpg' alt='1. India - Agra - El Taj Majal.' name='foto1' onclick="mostrar(1)" style="width:100px;height: 100px;">
+<img src='foto2.jpg' alt='2. Albania - Region de Ballsh.' name='foto2' onclick="mostrar(2)"style="width:100px;height: 100px;">
+<img src='foto3.jpg' alt='3. Atenes- Partenón.' name='foto3' onclick="mostrar(3)"style="width:100px;height: 100px;">
+<img src='foto4.jpg' alt='4. Bèlgica - Amberes.' name='foto4' onclick="mostrar(4)"style="width:100px;height: 100px;">
+<img src='foto5.jpg' alt='5. Costa Rica - Parc nacional de la Amistad.' name='foto5' onclick="mostrar(5)"style="width:100px;height: 100px;">
+<img src='foto6.jpg' alt='6. Egipte - Temple de Abu Simbel.' name='foto6' onclick="mostrar(6)"style="width:100px;height: 100px;">
+<img src='foto7.jpg' alt='7. Espanya - Albacete ciutat.' name='foto7' onclick="mostrar(7)"style="width:100px;height: 100px;">
+<img src='foto8.jpg' alt='8. Catalunya - Tarragona - Aqüeducte romà.' name='foto8' onclick="mostrar(8)"style="width:100px;height: 100px;"></center>
+<hr>
+
+<center><img src='' alt='' name='imatge'/>
+<div id="peus"></div></center>
+
+</body>
+</html>

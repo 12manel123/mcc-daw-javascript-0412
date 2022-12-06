@@ -1,0 +1,139 @@
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Examen M06-UF3</title>
+   	<style type="text/css">
+    body {font-family: arial, helvetica;}
+    form {
+	      width: 600px;
+	      margin: 80px auto 0 auto;
+    	}
+    label {
+        float: left;
+        width: 200px;
+        font-weight: bold;
+    }
+    label[for="condicions"] {
+        float: none;
+    }
+    input[type="text"],
+    input[type="password"],
+    textarea {
+        width: 360px;
+    }
+    input[type="checkbox"] {
+        margin-left: 200px;
+    }
+    input[type="submit"] {
+        margin: 20px 0 0 200px;
+        display: block;
+    }
+    </style>
+
+</head>
+<!----------------------------------------------------------EX1------------------------------------------->
+
+<body>
+    <form id="registro">
+        <fieldset>
+            <legend>Registre</legend>
+            <label for="nom">Nom:*</label><input type="text" name="nom" id="nom" required>
+            <label for="cognoms">Cognom:</label><input type="text" name="cognoms" id="cognoms">
+            <label for="email">Email:*</label><input type="text" name="email" id="email" required onblur="validarEmail()">
+            <label for="password">Password:</label><input type="password" name="password" id="password" onblur="validarContrasenya()">
+            <label for="comentaris">Comentaris:*</label><textarea name="comentaris" id="comentaris" rows="10" required onblur="validarComentaris()"></textarea>
+            <input type="checkbox" name="condicions" id="condicions" value="1">
+            <label for="condicions">Acepto les condicions.</label>
+            
+        </fieldset>
+    </form>
+    <center><button onclick="validarCondicions()">Enviar</button></center>
+
+
+
+
+<script type="text/javascript">
+    
+
+        
+        function validarCondicions(){
+            if (!document.getElementById('condicions').checked){alert("Acepta las condiciones")}
+        }
+        
+
+        function validarEmail() {
+            var email = document.getElementById("email").value;
+            var pattern = /^([\da-z_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
+            if (!email.match(pattern)) {alert("Formato erroneo de email. Introduce correctamente")}
+        }
+
+        function validarComentaris() {
+            var comentari = document.getElementById("comentaris").value;
+            if(comentari.length>=50){
+                alert("Longitud de comentarios superada");
+            }
+        }
+
+        function validarContrasenya() {
+            var password = document.getElementById("password").value;
+            var pattern = /^(?=.{8,}$)(?=.*[$ @ $ ! % * ? &])(?=(?:.*[A-Z]))(?=.*[a-z])(?=(?:.*[0-9]){2}).*/;
+            if (!password.match(pattern)){alert("Formato contraseña incorrecto");}
+        }
+    </script>
+<hr>
+<!----------------------------------------------------------EX2------------------------------------------->
+<center>
+<img src="play.gif" onclick="mostrar()"><br>
+<img src='' alt='' name='imatge'/>
+<p id="categoria"></p>
+<p id="peus"></p>
+</center>
+<script type="text/javascript">
+    
+    function mostrar(){
+        random = Math.floor(Math.random() * 14);
+        textos = [
+        "COVID-La mascareta en interiors deixarà de ser obligatòria el 20 d’abril a tot Espanya",
+        "COVID-El Departament de Salut retirarà les mascaretes a les escoles el 19 d’abril.COVID-Tornen a pujar els contagis per covid, potser ens hem relaxat massa?",
+        "COVID-Tornen a pujar els contagis per covid, potser ens hem relaxat massa?.",
+        "Societat-Dues noves línies de bus connectaran Vandellòs amb Tarragona i Reus",
+        "Educació-La implicació familiar clau per a l’èxit educatiu.",
+        "Educació-La FP Dual, una gran aliada de les empreses.",
+        "Tecnologia-Catalunya es pot convertir en un centre de fabricació de xips",
+        'Educació-Educació i Treball presenten una nova formació professional "integrada".',
+        "Tecnologia-Un estudio tarragoní descobreix la tecnología que utilitzada pels primers homínids.",
+        "Societat-Unió de Pagesos eleva a 32,4 MEUR les pèrdues en fruita seca per les gelades.",
+        "Societat-PortAventura obre temporada amb previsió d'assolir els 5,3 milions de visitants.",
+        "Esports-El Club Rugby Tarragona tanca la temporada amb el subcampionat de Primera Catalana.",
+        "Esports-Carles Jiménez guanya el 6è Rally Catalunya Històric a Salou.",
+        "Esports-El Baxi Marensa jugarà per primera vegada una final four europea. ",
+        "Tecnologia-Telefònica engega el 5G en la banda de 700MHz a Tarragona."
+        ];
+
+        if(textos[random].substr(0,2)=="CO"){
+            document.images["imatge"].src="COVID.png";
+            document.getElementById("categoria").innerHTML= "COVID";
+        }
+        else if(textos[random].substr(0,2)=="So"){
+            document.images["imatge"].src="Societat.png";
+            document.getElementById("categoria").innerHTML= "Societat";
+        }
+        else if(textos[random].substr(0,2)=="Te"){
+            document.images["imatge"].src="Tecnologia.png";
+            document.getElementById("categoria").innerHTML= "Tecnologia";
+        }
+        else if(textos[random].substr(0,2)=="Ed"){
+            document.images["imatge"].src="Educació.png";
+            document.getElementById("categoria").innerHTML= "Educació";
+        }
+        else if(textos[random].substr(0,2)=="Es"){
+            document.images["imatge"].src="Esports.png";
+            document.getElementById("categoria").innerHTML= "Esports";
+        }
+
+        document.getElementById("peus").innerHTML= textos[random];
+}
+</script>
+</body>
+</html>
