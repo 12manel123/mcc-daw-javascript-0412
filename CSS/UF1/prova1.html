@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HOLAS</title>
+	<style type="text/css">
+		p{
+			color:navy;
+		}
+
+
+	</style>
+	<script type="text/javascript">
+		activo=true
+
+		function clic(){
+			if (activo)
+				document.getElementById("sp").innerHTML="<h2>holas</h2>";
+			else
+				document.getElementById("sp").innerHTML="<h2>adios</h2>";
+			activo=!activo
+
+		}
+	</script>>
+</head>
+<body>
+<h1>Ejemplo</h1>
+<p style="font-size: 2em">HI!Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua.</p>
+<p style="color:red">Ut enim ad minim veniam,</p>
+<p>quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. <span id="sp">Excepteur sint occaecat</span> cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<br/><br/>
+<input type="button" name="Pulsame" onclick="clic()">
+
+</body>
+</html>

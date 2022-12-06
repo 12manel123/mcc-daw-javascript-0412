@@ -1,0 +1,56 @@
+<html> 
+<head> 
+  <style>  
+    p:nth-child(3n+0) { /* De 3 en tres empezando por el 1º */ 
+    background: yellow; 
+     } 
+p:nth-child(1) { 
+  background: red; 
+}
+
+
+input:optional { 
+   background-color: yellow; 
+ } 
+ input:required { 
+   background-color: red; 
+ }
+input:read-only { 
+    background-color: gray; 
+    color:white; 
+  }
+ :target { 
+      border: 2px solid #808080; 
+      background-color: lightyellow; 
+    }
+
+p{font-variant: small-caps}
+
+  </style> 
+</head> 
+<body> 
+  <p><a href="#ap1">Saltar apartado 1</a></p> 
+    <p><a href="#ap2">Saltar apartado 2</a></p> 
+    <p>Selecciona un enlace</p> 
+    <hr> 
+    <p id="ap1"><b>Apartado 1...</b></p> 
+    <p id="ap2"><b>Apartado 2...</b></p>
+   <h3> Selector :read-only .</h3> 
+  <p>Entrada normal:<br><input value="Hola"></p> 
+  <p>Entrada readonly:<br><input value="Buenas" readonly ></p>
+  <p>Párrafo numero 1.</p> 
+  <p>Párrafo numero 2.</p> 
+  <form action="#">
+<p>Entrada opcional:<br><input type="text"></p> 
+ <p>Entrada obligatoria:<br><input type="text" required></p> 
+  <input type="submit" name="Enviar"></form>
+  <p>Párrafo numero 3.</p> 
+  <p>Párrafo numero 4.</p> 
+  <p>Párrafo numero 5.</p> 
+  <p>Párrafo numero 6.</p> 
+  <p>Párrafo numero 7.</p> 
+  <p>Párrafo numero 8.</p> 
+  <p>Párrafo numero 9.</p> 
+  <p>Párrafo numero 10.</p>   
+</body> 
+</html>

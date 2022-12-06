@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Flex images</title>
+</head>
+<style type="text/css">
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Montserrat:wght@300&display=swap');
+
+body, html{
+	height: 100%;
+	background:darkgrey;
+	padding-top: 10px;
+	font-family: 'Montserrat', sans-serif;
+}
+.container{padding: 0.1em;}
+
+.galeria{list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+}
+ul li{
+	flex-grow: 1;
+	width: 300px;
+	padding-top: 45px;
+	font-weight: bold;
+	margin: 0;
+	padding: 0;
+	position: relative;
+}
+
+.foto{
+	height: 300px;
+	width: 100%;
+	overflow: hidden;
+	object-fit: cover;
+}
+ul li span{
+	position: absolute;
+	width: 30%;
+	color: white;
+	background-color:rgba(0,0,0,0.5); 
+	bottom: 7px;
+	font-style: 1.2em;
+	padding-left: 10px;
+}
+
+ul:after{
+	content: "";
+	flex-grow: 2;
+}
+
+</style>
+<body>
+
+<div class="container">
+	<ul class="galeria">
+		<li><span>Gatos nazis</span><img src="https://cdn.pixabay.com/photo/2021/10/19/10/56/cat-6723256__480.jpg" class="foto" alt="Gatos"></li>
+
+		<li><span>Gatos putos</span><img src="https://cdn.pixabay.com/photo/2018/07/13/10/20/kittens-3535404__340.jpg" class="foto" alt="Gatos"></li>
+
+		<li><span>Gato niga</span><img src="https://cdn.pixabay.com/photo/2015/03/27/13/16/maine-coon-694730__340.jpg" class="foto" alt="Gatos"></li>
+
+		<li><span>Gato gordo</span><img src="https://cdn.pixabay.com/photo/2017/11/09/21/41/cat-2934720__340.jpg" class="foto" alt="Gatos"></li>
+
+		<li><span>Gato calvissimo</span><img src="https://cdn.pixabay.com/photo/2015/06/18/21/53/sphynx-814164__340.jpg" class="foto" alt="Gatos"></li>
+		
+		<li><span>Calvo calvissimo</span><img src="https://cdn.pixabay.com/photo/2018/02/01/17/09/man-3123561__340.jpg" class="foto" alt="Gatos"></li>
+
+		<li><span>Gato bueno</span><img src="https://cdn.pixabay.com/photo/2016/11/08/05/25/steak-1807532__340.jpg" class="foto" alt="Gatos"></li>
+
+		<li><span>Perro demonio</span><img src="https://cdn.pixabay.com/photo/2019/10/02/22/08/dog-4522088__340.jpg" class="foto" alt="Gatos"></li>
+
+	</ul>
+
+
+</div>
+
+
+</body>
+</html>

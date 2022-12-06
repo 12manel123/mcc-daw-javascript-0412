@@ -1,0 +1,14 @@
+#caja1 {background-color: red;width: 100px; }
+#caja2 {background-color: chartreuse;width: 100px;}
+#caja3 {background-color: lightblue;width: 100px;}
+#caja4 {background-color: yellow;width: 400px; }
+
+
+#contenedor{
+	display: flex; 
+justify-content: center; 
+flex-wrap: wrap-reverse;
+width: 600px;
+background-color: #ddd;
+
+}

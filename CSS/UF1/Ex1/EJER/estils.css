@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+h1,h2,h3,h4,h5,h6{
+
+	background-color: red;
+	font-family: 'Pacifico';
+}
+body{
+	padding: 20px;
+}
+fieldset div{
+	padding-top: 10px;
+}
+fieldset{
+	background-color: lightskyblue;
+	margin-right: 40%;
+	padding: 10px;
+}
+table, td, th {
+  border: 1px solid black;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+table {
+  border-collapse: collapse;
+
+}
+th{
+	background-color: yellow;
+	color:red;
+}
+
+tfoot td{
+	background-color: black;
+	color:white;
+}
+tbody tr:hover{
+	background-color: cyan;
+	color:navy;
+}
+
+dl dt{
+	font-weight: bold;
+}
+dl dd{
+	font-style: italic;
+}
+p::first-letter {
+	font-size: 2em;
+  color: #8A2BE2;
+}
+
+ul li:nth-child(2) {
+	background-color: lightyellow;
+	color: red;
+
+}
+ol li:nth-of-type(4n){
+	color:lightblue;
+	background: gray;
+	width: 50%;
+}
+pre{
+	font-size: 1.3em;
+}
+sub,sup{
+	font-style: monospace;
+}
+
+abbr[title]::after{
+	color:red;
+	content: attr(title);
+}
+fieldset legend{
+	background-color: gray;
+	color: white;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-right: 10px;
+	padding-left: 10px;
+}
+input[type="radio"]:checked + label{
+	 color: red; 
+   	font-weight: bold;
+}
+
+input[type="file"]::before{
+  content: url("save.png");
+  color:blue;
+}

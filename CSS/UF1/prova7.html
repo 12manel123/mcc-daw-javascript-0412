@@ -1,0 +1,56 @@
+<html> 
+<head> 
+<style> 
+  p:first-of-type i{         /*todos los <i> dentro de un <p> que es primer hijo */ 
+  background: yellow; 
+} 
+
+input[type="text"]:focus { 
+   background-color: yellow; 
+}
+input:in-range { 
+  border: 2px solid black; 
+  background:chartreuse; 
+} 
+input:out-of-range { 
+  border: 2px solid red; 
+  background:# ffdede; 
+} 
+ input:invalid { 
+    border: 2px solid red; 
+  }
+p:nth-child(3){
+  background-color: red;
+};
+
+</style> 
+</head> 
+<body> 
+	<h1>fe</h1>
+<p>Soy palabra <i>cursiva</i> en un párrafo. Yo tambien soy <i>cursiva</i> en el mismo 
+parrafo.</p> 
+
+<p>Soy palabra <i>cursiva</i> en un segundo párrafo. Yo tambien soy <i>cursiva</i> en el 
+segundo parrafo.</p> 
+
+
+<p>Clica en una caja para seleccionarla/paserle el foco:</p> 
+Nombre: <input type="text" ><br> 
+  Apellidos: <input type="text"><br>
+  <input type="button" value="pulsame">
+
+
+<h3>Selectores de rango</h3> 
+<input type="number" min="5" max="10" value="7"> 
+<p>Rango de 5 a 10</p>
+
+
+ <h3>Demonstración del selector :invalid</h3> 
+ <form actiom="#">
+  <input type="email" placeholder="su correo"> 
+  <p>Escribe un email correcto</p>
+    <input type="submit" value="pulsame">
+
+
+</body> 
+</html> 

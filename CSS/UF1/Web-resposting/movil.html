@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		#m{background: yellow;}
+		#t{background: chartreuse;}
+		#e{background: pink;}
+
+		@media only screen and (min-width: 320px)and (max-width: 480px){
+			#m{background: yellow;}
+			#t,#e{display: none;}
+		}
+		@media only screen and (min-width: 481px)and (max-width: 960px){
+			#t{background: chartreuse;}
+			#m,#e{display: none;}
+		}
+		@media only screen and (min-width: 961px){
+			#e{background: pink;}
+			#t,#m{display: none;}
+
+		}
+		@media only screen and(orientation:height){
+
+		}
+
+/*ladscape // portrait*/
+/*
+@media screen and (min-width:576px){
+	
+}
+@media screen and (min-width:768px){
+	
+}
+@media screen and (min-width:768px){
+	
+}
+
+
+
+*/
+
+	</style>
+</head>
+<body>
+	<h1 id="m">Mobil</h1>
+	<h1 id="t">Tablet</h1>
+	<h1 id="e">Escriptori</h1>
+	<section>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt</section>
+		<section> ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	</section>
+</body>
+</html>

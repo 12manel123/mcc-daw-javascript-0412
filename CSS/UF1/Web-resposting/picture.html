@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<style type="text/css">
+		div{
+			width: 300px;
+			padding: 20px;
+		}
+		#uno{background-color: chartreuse;box-sizing: content-box;}
+		#dos{background-color: yellow;box-sizing: border-box;}
+
+		.container{
+			width: 80%;
+			margin: 0 auto;
+			box-sizing: border-box;
+		}
+		img{
+			border: 5px solid white;
+			outline: 1px solid black;
+			background-color: red;
+		}
+
+	</style>
+</head>
+<body>
+	<div id="uno">CONT1</div>
+	<div id="dos">CONT2</div>
+
+	<div class="container">
+		<picture>
+			<source media="(min-width:800px)" srcset="paisajeGran.jpg">
+			<source media="(min-width:665px)" srcset="paisajeMitg.jpg">
+
+			<img src="paisajePetit.jpg">
+
+
+
+		</picture>
+	</div>
+	erre
+
+</body>
+</html>

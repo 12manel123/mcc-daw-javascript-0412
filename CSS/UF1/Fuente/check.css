@@ -1,0 +1,33 @@
+@font-face{
+	font-family: miguel;
+	src:url(Lato-Regular.ttf);
+}
+body{
+	font-family: miguel;
+	margin: 0;
+	padding: 0;
+	font-size: 20px;
+}
+label{
+	display: block;
+	font-size: 1.5em;
+	cursor: pointer;
+}
+input[type=checkbox]{
+	position: absolute;
+	left:-1000px;
+}
+input[type=checkbox]+label:before{
+	content: "";
+	display: inline-block;
+	width: 33px;
+	height: 32px;
+	margin: 0 5px 0 0;
+	vertical-align: bottom;
+	background:url(cara.png) no-repeat 0 0;
+
+}
+input[type=checkbox]:checked + label:before{
+		background-position: 0 -32px;
+
+}

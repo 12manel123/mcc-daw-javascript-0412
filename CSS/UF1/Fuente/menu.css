@@ -1,0 +1,53 @@
+@font-face{
+	font-family: miguel;
+	src:url(Lato-Regular.ttf);
+}
+body{
+	font-family: miguel;
+	margin: 0;
+	padding: 0;
+	font-size: 20px;
+}
+header{
+	background-color: black;
+	color: white;
+	text-align: center;
+
+}
+h1{
+	margin: 0px;
+	padding: 20px;
+}
+.contenido{
+	width: 70%;
+	margin: auto;
+}
+ul{
+	margin: 0;
+	padding: 0;
+	width: 700px;
+	margin: auto;
+	height: 30px;
+}
+li{
+	list-style-type: none;
+	float:left;
+	display: block;
+	width: 20%;
+}
+li a{
+	text-decoration: none;
+	color: yellow;
+	font-weight: bold;
+	width: 100%;
+line-height: 150%;
+	display: block;
+}
+li a:hover{
+	background-color: yellow;
+	color:red;
+}
+li a:active{
+	background-color: lightyellow;
+
+}
