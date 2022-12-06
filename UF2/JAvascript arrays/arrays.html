@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<p id="demo"></p>
+	<p id="demo2"></p>
+
+	<script type="text/javascript">
+/*-------------------------------------------------------VIDEO LARA-------------------------------------------*/
+/*
+		var n=44
+		var dias=new Array(5)
+		dias[0]="Lunes"
+		dias[1]="Martes"
+		dias[2]="Miercoles"
+		dias[3]="Jueves"
+		dias[4]="Viernes"
+		//document.write(dias[3])
+		for (x=0;x<dias.length;x++) {
+			document.write(dias[x]+"<br>")
+		}
+
+		
+		document.write("Num de elementos: "+dias.length+" ----<br>")
+		dias[6]="Domingo"
+		for (x=0;x<dias.length;x++) {
+			document.write(dias[x]+"<br>")
+		}
+		
+		document.write("<br>"+dias)
+*/
+
+
+
+/*
+		var alumnos=new Array(10)
+		var suma=0
+		for(x=0;x<alumnos.length;x++){
+			alumnos[x]=Number(prompt("Entra nota de alumno "+(x+1)))//parseInt es lo mismo que
+			suma+=alumnos[x] 
+		}
+		document.write("Notas: "+alumnos+"<br>")
+		document.write("Media es: "+(suma/alumnos.length))
+*/
+
+
+
+/*
+		var dias=["Lunes",55,"Miercoles",true,"Viernes"]
+		document.write(dias)
+*/
+
+/*
+		var temperaturas=[["Barcelona","Girona","Lleida","Tarragona"],[17.5,17,16.4,18.2]]
+		document.write(temperaturas[1].length)
+*/
+
+
+/*-------------------------------------------------------EX1-------------------------------------------*/
+
+		numeros = new Array(4);
+		numeros.fill(0)
+		array1 = numeros.map(f1);
+		document.getElementById("demo").innerHTML=array1;
+		function f1() {
+		  return Math.floor(Math.random()*10);
+		}
+
+/*-------------------------------------------------------EX2-------------------------------------------*/
+
+
+		var numeros2= [1, 4, 4];
+		var raices = numeros2.map(Math.sqrt);
+		document.write(raices)
+
+/*-------------------------------------------------------EX3-------------------------------------------*/
+
+
+		function f2(){
+			numeros3 = new Array(4);
+			numeros3.fill(0)
+			array3 = numeros3.map(f3);
+			array3.pop(); //EX3.2 
+			
+			document.getElementById("demo2").innerHTML=array3;
+			function f3() {
+			  return Math.floor(Math.random()*10);
+			}
+
+		}
+/*-------------------------------------------------------EX4-------------------------------------------*/
+
+		document.write("<br>")
+		var numeros4= [1, 4, 4,5,7,1];
+		numeros4.splice(2, 1); //Ex4.1 borrar posicion 3
+		numeros4.sort();//Ex4.2 ordenar
+		numeros4.splice(0, 1); //Ex4.3 borrar primero
+
+		document.write(numeros4)
+		
+
+
+	</script>
+	<button onclick="f2()">Boton</button>
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Arrays</title>
+</head>
+<body>
+	<script type="text/javascript">
+		/*
+		var dias=new Array(5);
+		dias[0]="Lunes";
+		dias[1]="Martes";
+		dias[2]="Miercoles";
+		dias[3]="Jueves";
+		dias[4]="Viernes";
+		alert(dias[1]);
+
+		for (x=0;x<dias.length;x++){
+			document.write(dias[x]+"<br>");
+		}
+		dias[6]="Domingo";
+		document.write("<hr>");
+		for (x=0;x<dias.length;x++){
+			document.write(dias[x]+"<br>");
+		}*/
+
+
+
+
+
+		/*
+		var dias=new Array("Lunes","Martes","Miercoles","Jueves","Viernes")
+		document.write(dias.length+"<br>")
+		for (x=0;x<dias.length;x++){
+			document.write("<hr>");
+			for (x in dias){
+				document.write(dias[x]+"<br>")
+			}
+		}
+*/
+
+/*
+		var temperatura=new Array(
+			new Array("Barcelona","Girona","Lleida","Tarragona"),
+			new Array("17","16","15.5","22")
+			)
+		document.write(temperatura.length);
+
+		var temperatura=[["Barcelona","Girona","Lleide","Tarragona"],[17,16,15.5,22]]
+		document.write(temperatura[0][2])*/
+
+/*
+		var clasificacio=[
+			[1,"Pastor Maldonado","William-Renault","1:39:09:145",1,25],
+			[2,"Fernando Alonso","Ferrari","+3.1 seg",2,25],
+			[5,"Kabu Kobayashi","Sauber-ferrari","+64.6",9,10]
+
+		];
+
+		document.write("<table border=1>");
+		document.write("<tr><td>Pos</td><td>Pilot</td><td>Escuderia</td><td>Temps</td><td>Graella</td><td>Punts</td></tr>");
+		for(x=0;x<clasificacio.length;x++){
+			document.write("<tr>");
+			for(y=0;y<clasificacio[x].length;y++){
+				document.write("<td>"+clasificacio[x][y]+"</td>");
+			}
+			document.write("</tr>");
+		}
+		document.write("</table>");*/
+
+
+		var laborables=["Lunes","Martes","Miercoles","Jueves","Viernes"]
+		var festivos=["Sabado","Domingo"]
+		laborables.reverse();
+		var semana=laborables.concat(festivos);
+		document.write(semana)
+		document.write(laborables.length+"<br>")
+		laborables.push("otro")
+		document.write(laborables)
+
+		alert(laborables.pop())
+		document.write(laborables)
+
+		document.write(laborables.sort(function(a,b){return a-b})+"<br>");
+
+
+
+
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<hr><h3>BLOC1</h3>
+<script type="text/javascript">
+	
+//----------------------------------EX1-------------------
+/*
+
+	var y=((x-1)/7)+(1/(x+5));
+
+*/
+//----------------------------------EX2-------------------
+/*
+
+	n=parseInt(prompt("Entra segons"));
+
+	h=0;
+	while(n>=3600){
+		h++; 
+		n=n-3600;
+	}
+		
+
+
+		
+
+	document.write("Horas: "+h+"<br>");
+	document.write("Minutos: "+parseInt(n/60)+"<br>");
+	document.write("Segundos: "+(n%60));
+
+*/
+</script>
+
+
+
+
+<hr><h3>BLOC2</h3>
+<script type="text/javascript">
+
+//----------------------------------EX1-------------------
+/*
+
+a=parseInt(prompt("Num 1"));
+b=parseInt(prompt("Num 2"));
+c=parseInt(prompt("Num 3"));
+max=0,min=a,mitg=0;
+for (x=3; x > 0; x--) {
+	if (max<a)
+		max=a;
+	else if (max<b)
+		max=b
+	else if (max<c) 
+		max=c
+}
+
+for (x=3; x > 0; x--) {
+	if (min>a)
+		min=a;
+	else if (min>b)
+		min=b
+	else if (min>c) 
+		min=c
+}
+
+	if (a!=max&&a!=min)
+		mitg=a;
+	else if (b!=max&&b!=min)
+		mitg=b
+	else if (c!=max&&c!=min) 
+		mitg=c
+	else 
+		mitg=max
+
+
+
+
+document.write("Maximo: "+max+"<br>");
+document.write("Minimo: "+min+"<br>");
+document.write("Mitg: "+mitg+"<br>");
+
+*/
+//----------------------------------EX2-------------------
+/*
+
+nu1=parseInt(prompt("Num 1"));
+nu2=parseInt(prompt("Num 2"));
+
+if ((nu1*nu1)==nu2){
+	document.write("Él cuadrat de "+nu1+" és: "+nu2);
+}
+else
+	document.write("No ho és")
+
+
+
+*/
+//----------------------------------EX3-------------------
+/*
+
+var numero=6, interval=false;
+if (numero>=1&&numero<=7){
+	interval=true;
+}
+if (interval)
+	document.write("Està entre el 1 i el 7<br>");
+
+*/
+//----------------------------------EX4-------------------
+/*
+
+dia=parseInt(prompt("Num mes: "));
+
+if (dia==1||dia==3||dia==5||dia==7||dia==8||dia==10||dia==12){
+	alert("Te 31 dies");
+}
+else if (dia==4||dia==6||dia==9||dia==11){
+	alert("Te 30 dies");
+}
+else
+	alert("Es febrer, te 28")
+
+*/	
+//----------------------------------EX5-------------------
+/*
+
+diaM=parseInt(prompt("Num del dia: "));
+mesM=parseInt(prompt("Num del mes: "));
+anyM=parseInt(prompt("Num del any: "));
+
+if (anyM<=2021){
+		switch(mesM){
+		case 1:case 3:case 5:case 7:case 8:case 10:case 12:
+			if (diaM<=31){
+				alert("Vàlid")
+			}
+			else alert("Incorrecte dia")
+			break;
+		case 4:case 6:case 9:case 11:
+			if (diaM<=30){
+				alert("Vàlid")
+			}
+			else alert("Incorrecte dia")
+			break;
+		case 2:
+			if (diaM<=28){
+				alert("Vàlid")
+			}
+			else alert("Incorrecte dia")
+			break;
+		default:
+			alert("Incorrecte mes")
+			}
+	}
+	else
+		alert("Incorrecte any")
+
+*/
+//----------------------------------EX6-------------------
+/*
+
+base=parseInt(prompt("Num de base: "));
+expo=parseInt(prompt("Num de exponent: "));
+r=1;
+for (x=0; x < expo; x++) {
+	r=r*base
+	
+}
+alert("Resultat: "+r)
+
+*/
+//----------------------------------EX7-------------------
+/*
+
+hora=parseInt(prompt("Hora: "));
+camp=0;
+y=0;
+for (x=0; x < hora; x++) {
+	if (x==12){
+	y=0;
+	}
+	camp=camp+y+1;
+	y++;
+
+}
+document.write(camp);
+
+*/
+//----------------------------------EX8---------------
+/*
+
+dni=parseInt(prompt("DNI sin letra: "));
+a=(dni%23);
+
+switch(a){
+	case 0:
+	document.write(dni+"T")
+	break;
+	case 1:
+	document.write(dni+"R")
+	break;
+	case 2:
+	document.write(dni+"W")
+	break;
+	case 3:
+	document.write(dni+"A")
+	break;
+	case 4:
+	document.write(dni+"G")
+	break;
+	case 5:
+	document.write(dni+"M")
+	break;
+	case 6:
+	document.write(dni+"Y")
+	break;
+	case 7:
+	document.write(dni+"F")
+	break;
+	case 8:
+	document.write(dni+"P")
+	break;
+	case 9:
+	document.write(dni+"D")
+	break;
+	case 10:
+	document.write(dni+"X")
+	break;
+	case 11:
+	document.write(dni+"B")
+	break;
+	case 12:
+	document.write(dni+"N")
+	break;
+	case 13:
+	document.write(dni+"J")
+	break;
+	case 14:
+	document.write(dni+"Z")
+	break;
+	case 15:
+	document.write(dni+"S")
+	break;
+	case 16:
+	document.write(dni+"Q")
+	break;
+	case 17:
+	document.write(dni+"V")
+	break;
+	case 18:
+	document.write(dni+"H")
+	break;
+	case 19:
+	document.write(dni+"L")
+	break;
+	case 20:
+	document.write(dni+"C")
+	break;
+	case 21:
+	document.write(dni+"K")
+	break;
+	case 22:
+	document.write(dni+"E")
+	break;
+	default:
+	document.write("Error")
+}
+
+*/
+//----------------------------------EX9-------------------
+/*
+
+x=parseInt(prompt("Any: "));
+a=(x%19);
+b=(x%4);
+c=(x%7);
+d=((19*a+24)%30);
+e=((2*b+4*c+6*d+5)%7);
+diu=(22 + d + e);
+
+if(diu>31){
+	alert("Dia de pascua en abril: "+(diu-31));
+}
+else
+		alert("Dia de pascua en març: "+diu);
+
+*/
+</script>
+
+</body>
+</html>

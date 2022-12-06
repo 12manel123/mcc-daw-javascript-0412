@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	
+<script type="text/javascript">
+	function producto(id,nombre,precio,stock){
+		this.id=id;
+		this.nombre=nombre;
+		this.precio=precio;
+		this.stock=stock;
+		this.mostrarStock = function(){alert("Id: "+this.id+" | Nombre: "+this.nombre+" | Precio: "+this.precio+ " |Stock: "+this.stock)};
+		this.asignarStock = function(num1){this.stock = num1};
+		this.comprarStock = function(num2){this.stock = this.stock-num2}; 
+
+	}
+
+
+	var prod1 = new producto(1,"Freddy",3000, 20);
+	var prod2 = [2,"Golden Freddy",300, 10];
+	var prod3 ={id:3,nombre:"Bonny",precio:600,stock:30}
+	
+
+
+	
+	function botonMostrarStock(){
+		prod1.mostrarStock();
+	}
+	function botonMostrarStock2(){
+		cuerpo.innerHTML=" ID: "+prod3.id+" | Nombre: "+prod3.nombre+" | Precio: "+prod3.precio+ " |Stock: "+prod3.stock;
+	}
+
+	function botonAsignarStock(){
+		num1 = prompt("Cuantos se asignaran?");
+		prod1.asignarStock(num1);
+	}
+
+	function botonComprarStock(){
+		num2 = prompt("Cuantos quieres comprar?");
+		if(num2>prod1.stock){
+			alert("No hi ha tants");
+		}
+		else{
+			prod1.comprarStock(num2);
+			alert("Comprats "+num2+" productes");
+		}
+	}
+
+	function botonEditarTotStock(){
+		prod1.nombre = prompt("Introduce Nombre");
+		prod1.precio = prompt("Introduce Precio");
+		prod1.stock = prompt("Introduce Stock");
+	}
+
+</script>
+<input type="button" name="boton" value="EX1-> Verure Stock" onclick="botonMostrarStock()"></div>
+<input type="button" name="boton" value="EX2-> Asignar Stock" onclick="botonAsignarStock()"></div>
+<input type="button" name="boton" value="EX3-> Comprar Stock" onclick="botonComprarStock()"></div>
+<input type="button" name="boton" value="EX4-> Editar Stock" onclick="botonEditarTotStock()"></div>
+<br>
+<input type="button" name="boton" value="EX5-> Verure Stock con otra metodologia" onclick="botonMostrarStock2()"></div><span id="cuerpo"></span>
+
+
+
+</body>
+</html>

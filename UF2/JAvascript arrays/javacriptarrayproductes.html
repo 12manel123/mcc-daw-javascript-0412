@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	var producte = new Array(10);
+	for(var i=0;i<producte.length;i++){
+		producte[i] =(Math.floor((Math.random()*250+1)));
+	}
+	function stock(){	
+		document.getElementById("prueba").innerHTML = producte.join("<br>");		
+	}
+	function añadir(){
+		producte.push(Math.floor((Math.random()*250)+1));
+		document.getElementById("prueba2").innerHTML = producte.join("<br>");
+	}
+	function borrar(){
+		producte.pop();
+		document.getElementById("prueba3").innerHTML = producte.join("<br>");
+	}
+	function elegirborrar(){
+		var posicion = parseInt(prompt("Cual quieres borrar?"));
+		producte.splice(posicion,1);
+	}
+	function ranking(){
+		var producte2 = new Array();
+		producte2 = producte.slice(0,producte.length);
+		producte2.sort(function(a, b){return a-b});
+		//producte2.reverse();
+		document.getElementById("prueba4").innerHTML = producte2.join("<br>");
+	}
+	function eliminarprimero(){
+		producte.shift();
+		document.getElementById("prueba5").innerHTML = producte.join("<br>");
+	}
+
+	function comprar(){
+		
+		var posicion2 = parseInt(prompt("Que queres mamawebo?"))
+		if(typeof producte[posicion2]!=='undefined'){
+			if(producte[posicion2]>0){producte[posicion2]-=1;}
+			else{alert("NO HI HA SUFICIENT STOCK!!!")}
+		}
+		else{
+			alert("No existeix")
+		}
+		
+	}
+	function primerproducte(){
+		var numstock = parseInt(prompt("Unitats?:"));
+		var posicion = producte.indexOf(numstock);
+		document.getElementById("prueba7").innerHTML = posicion;
+	}
+	function ultimproducte(){
+		var numstock = parseInt(prompt("Unitats?:"));
+		var posicion = producte.lastIndexOf(numstock);
+		document.getElementById("prueba8").innerHTML = posicion;
+	}
+
+	function mindeuunitats(){
+		function esSuficientementeGrande(elemento) {return elemento > 10;}
+		if(producte.every(esSuficientementeGrande)==true){alert("Tots son majors de 10")}
+		else{alert("Hi han stoks amb menor unitat o igual a 10")}
+		document.getElementById("prueba9").innerHTML = posicion;
+	}
+
+
+	function sensestock(){	
+		if(producte.some(comprova0)){document.getElementById("prueba10").innerHTML = "Hi han productes sense stock"}
+		else{document.getElementById("prueba10").innerHTML = "Tots els productes tenen stock";}
+		function comprova0(valor){return valor == 0;}
+	}
+
+	
+
+	function llistaproductessensestock(){	//no se puede hacer con filter, ya que no puedo llevarme la posicion fuera dela funcion y guardarla, solo se ejecuta otra vez y la crea todo el rato, asi que no, no es posible a menos que se extraiga todos y despues fuera se filtre, pero no estaria bien optimizado.
+			var ceros = [];
+			for(i=0;i<producte.length;i++){
+				if(producte[i]==0){
+					ceros.push(i)		
+				}
+			}
+		document.getElementById("prueba11").innerHTML = ceros;
+	}
+
+
+	function llistatParcialdEstoc(){
+		var inici2 = parseInt(prompt("Pido"));
+		var inici3 = parseInt(prompt("Pido"));
+		document.getElementById("prueba12").innerHTML = producte.slice(inici2,inici3);
+
+
+	}
+	function afegirEstocPosicioValor1(){
+		inici4 = parseInt(prompt("Pido"));
+		producte.splice(inici4,0,parseInt(Math.random()*250+1));
+		document.getElementById("prueba13").innerHTML = producte.join("<br>");
+	}
+
+	function checkBuitSplit(unitats) {
+ 	 let aa = unitats.split("-")[0];
+ 	 return parseInt(aa) === 0;
+	}
+	function llistatProductesSenseEstoc() {
+	  let llistat = "No hi ha productes sense estoc.";
+
+	  if (producte.some(unitats => unitats === 0)) {
+	    let aux = [];
+	    let arr = [];
+	    llistat = "";
+	    for (let numproducte in producte) {
+	      arr.push(producte[numproducte] + "-" + numproducte);
+	    }
+	    aux = arr.filter(checkBuitSplit);
+	    for (let index in aux) {
+	      llistat +=
+	        '<li>El producte ${aux[index].split("-")[1]} no té estoc.</li>';
+	    }
+	    document.getElementById("info").innerHTML = llistat;
+	  } else {
+	    document.getElementById("info").innerHTML = llistat;
+	  }
+	}
+
+
+
+</script>
+
+<input type="button" name="boton" value="ver stock" onclick="stock()">
+<div id="prueba"></div><br>
+<input type="button" name="boton" value="añadir producto" onclick="añadir()">
+<div id="prueba2"></div><br>
+<input type="button" name="boton" value="borrar producto" onclick="borrar()">
+<div id="prueba3"></div><br>
+<input type="button" name="boton" value="eligir borrar" onclick="elegirborrar()"><br><br>
+<input type="button" name="boton" value="ranking" onclick="ranking()">
+<div id="prueba4"></div><br>
+<input type="button" name="boton" value="eliminarprimero" onclick="eliminarprimero()">
+<div id="prueba5"></div><br>
+<input type="button" name="boton" value="comprar" onclick="comprar()">
+<div id="prueba6"></div><br>
+<input type="button" name="boton" value="primer producte" onclick="primerproducte()">
+<div id="prueba7"></div><br>
+<input type="button" name="boton" value="ultim producte" onclick="ultimproducte()">
+<div id="prueba8"></div><br>
+<input type="button" name="boton" value="minim 10 unitats" onclick="mindeuunitats()">
+<div id="prueba9"></div><br>
+<input type="button" name="boton" value="sense stock" onclick="sensestock()">
+<div id="prueba10"></div><br>
+<input type="button" name="boton" value="llistar sense !!!!!" onclick="llistatProductesSenseEstoc()">
+<div id="prueba11"></div><br>
+
+<input type="button" name="boton" value="llistar Parcial" onclick="llistatParcialdEstoc()">
+<div id="prueba12"></div><br>
+<input type="button" name="boton" value="estoc valor 1" onclick="afegirEstocPosicioValor1()">
+<div id="prueba13"></div><br>
+</body>
+</html>

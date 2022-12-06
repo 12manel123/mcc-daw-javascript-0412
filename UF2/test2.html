@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+</head>
+<body>
+
+</body id="cos">
+<script type="text/javascript">
+	
+
+	function rectangulo(base,altura){
+		this.base=base
+		this.altura=altura
+		//this.area=function(){return this.base*this.altura}
+		this.area=calcular
+	}
+	function calcular(){
+		return this.base*this.altura
+
+	}
+
+
+	var r1=new rectangulo(2,4)
+	var r2=new rectangulo(0,0)
+	alert(r1.area())
+	r2.base = prompt("Introduce base");
+	r2.altura = prompt("Introduce altura");
+	alert(r2.area())
+
+	alert(calcular());
+	
+</script>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	var stock = new Array(10);
+	for(var i=0;i<stock.length;i++){
+		stock[i] =(Math.floor((Math.random()*250+1)));
+	}
+	function veureStock(){	
+		document.getElementById("div1").innerHTML = stock.join("<br>");		
+	}
+	function afegir1Stock(){
+		stock.push(Math.floor((Math.random()*250)+1));
+		document.getElementById("div2").innerHTML = stock.join("<br>");
+	}
+	function borrar1Stock(){
+		stock.pop();
+		document.getElementById("div3").innerHTML = stock.join("<br>");
+	}
+	function elegirBorrar(){
+		var posicio = parseInt(prompt("Cual posición quieres borrar?"));
+		stock.splice(posicio,1);
+	}
+	function eliminarPrimer(){
+		stock.shift();
+		document.getElementById("div4").innerHTML = stock.join("<br>");
+	}
+	function ordenarStock(){
+		var stock2 = new Array();
+		stock2 = stock.slice(0,stock.length);
+		stock2.sort(function(a, b){return a-b});
+		document.getElementById("div5").innerHTML = stock2.join("<br>");
+	}
+	function comprarStock(){
+		var posicio2 = parseInt(prompt("Que queres mamawebo?"))
+		if(typeof stock[posicio2]!=='undefined'){
+			if(stock[posicio2]>0){stock[posicio2]-=1;}
+			else{alert("NO HI HA SUFICIENT STOCK!!!")}
+		}
+		else{alert("No existeix")}
+	}
+	function primerProducte(){
+		var numstock = parseInt(prompt("Unitats?:"));
+		var posicion = stock.indexOf(numstock);
+		document.getElementById("div7").innerHTML = posicion;
+	}
+	function ultimProducte(){
+		var numstock = parseInt(prompt("Unitats?:"));
+		var posicion = stock.lastIndexOf(numstock);
+		document.getElementById("div8").innerHTML = posicion;
+	}
+	function minDeuUnitats(){
+		function esSuficientementeGrande(elemento) {return elemento > 10;}
+		if(stock.every(esSuficientementeGrande)==true){alert("Tots son majors de 10")}
+		else{alert("Hi han stoks amb menor unitat o igual a 10")}
+		document.getElementById("div9").innerHTML = posicion;
+	}
+	function senseStock(){	
+		if(stock.some(comprova0)){document.getElementById("div10").innerHTML = "Hi han productes sense stock"}
+		else{document.getElementById("div10").innerHTML = "Tots els productes tenen stock";}
+		function comprova0(valor){return valor == 0;}
+	}
+	function llistarProductesSenseStock(){
+		var ceros = [];
+		for(i=0;i<stock.length;i++){if(stock[i]==0){ceros.push(i)}}
+		if(ceros[0]==null){document.getElementById("div11").innerHTML = "No hi han productes sense stock "}
+		else{document.getElementById("div11").innerHTML = "Pocició on no hi ha stock: "+ceros;}
+	}
+	function llistatParcialdEstoc(){
+		var inici2 = parseInt(prompt("Pido"));
+		var inici3 = parseInt(prompt("Pido"));
+		document.getElementById("div12").innerHTML = stock.slice(inici2,inici3);
+	}
+	function afegirEstocPosicioValor1(){
+		inici4 = parseInt(prompt("Pido"));
+		stock.splice(inici4,0,parseInt(Math.random()*250+1));
+		document.getElementById("div13").innerHTML = stock.join("<br>");
+	}
+</script>
+
+
+<!------------------------------------------------------EX1------------------------------------------------>
+<input type="button" name="boton" value="EX1-> Verure Stock + Crear" onclick="veureStock()"><div id="div1"></div>
+
+<!------------------------------------------------------EX2------------------------------------------------>
+<input type="button" name="boton" value="EX2-> Afejir producte aleatori" onclick="afegir1Stock()"><div id="div2"></div>
+
+<!------------------------------------------------------EX3------------------------------------------------>
+<input type="button" name="boton" value="EX3-> Borrar últim producte" onclick="borrar1Stock()"><div id="div3"></div>
+
+<!------------------------------------------------------EX4------------------------------------------------>
+<input type="button" name="boton" value="EX4-> Elegeix quin stock borrar" onclick="elegirBorrar()"><br>
+
+<!------------------------------------------------------EX5------------------------------------------------>
+<input type="button" name="boton" value="EX5-> Borrar primer producte" onclick="eliminarPrimer()"><div id="div4"></div>
+
+<!------------------------------------------------------EX6------------------------------------------------>
+<input type="button" name="boton" value="EX6-> Ranking de menor a major" onclick="ordenarStock()"><div id="div5"></div>
+
+<!------------------------------------------------------EX7------------------------------------------------>
+<input type="button" name="boton" value="EX7-> Comprar un producte del valor especificat" onclick="comprarStock()"><br>
+
+<!------------------------------------------------------EX8------------------------------------------------>
+<input type="button" name="boton" value="EX8-> Primer producte amb X unitats de stock" onclick="primerProducte()"><div id="div7"></div>
+
+<!------------------------------------------------------EX9------------------------------------------------>
+<input type="button" name="boton" value="EX9-> Últim producte amb X unitats de stock" onclick="ultimProducte()"><div id="div8"></div>
+
+<!------------------------------------------------------EX10------------------------------------------------>
+<input type="button" name="boton" value="EX10-> Comprovar el minim de 10 unitats en tots els stocks" onclick="minDeuUnitats()"><div id="div9"></div>
+
+<!------------------------------------------------------EX11------------------------------------------------>
+<input type="button" name="boton" value="EX11-> Comprovar si hi ha algun producte sense stock" onclick="senseStock()"><div id="div10"></div>
+
+<!------------------------------------------------------EX12------------------------------------------------>
+<input type="button" name="boton" value="EX12-> Llistar productes sense stock" onclick="llistarProductesSenseStock()"><div id="div11"></div>
+<!--no se puede hacer con filter, ya que no puedo llevarme la posicion fuera dela funcion y guardarla, solo se ejecuta otra vez y la crea todo el rato, asi que no, no es posible a menos que se extraiga todos y despues fuera se filtre, pero no estaria bien optimizado.-->
+
+<!------------------------------------------------------EX13------------------------------------------------>
+<input type="button" name="boton" value="EX13-> Llistar un parcial del stock" onclick="llistatParcialdEstoc()"><div id="div12"></div>
+
+<!------------------------------------------------------EX14------------------------------------------------>
+<input type="button" name="boton" value="EX14-> Afegir un producte a la pocició X" onclick="afegirEstocPosicioValor1()"><div id="div13"></div>
+
+
+</body>
+</html>

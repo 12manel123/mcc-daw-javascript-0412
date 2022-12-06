@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript">
+		/*
+		function externa(){
+			var valor=20;
+			function interna(valor){
+				valorl=1000
+				document.write("Saludos en interna"+(valor+1)+"<br>"+valorl+"<br>");
+			}
+			document.write("Saludos externa<br>");
+			document.write(valor+"<br>");
+			interna(valor);
+		}*/
+
+/*
+		function digits(cadena){
+			var r="";
+			for (i=0;i<cadena.length;i++){
+				var c=cadena.charAt(i)
+				if(digito(c))
+					r+=c
+			}
+			function digito(c){
+				return ("0123456789".indexOf(c)==-1)?false:true
+			}
+			return r;
+		}*/
+
+		function factorial(n){
+			if(n==1 || n==0){return 1}
+			else{return n*factorial(n-1)}
+		}
+
+	</script>
+</head>
+<body>
+	<script type="text/javascript">
+		
+	var ene=prompt("Entra merda:")
+			alert(factorial(ene))
+
+	/*
+		alert(digits(ene))
+		interna();
+
+		externa();
+		document.write(valor)*/
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <script>
+        var finestra; 
+        function obrir(){ 
+         finestra=window.open('','', 'width=300,height=100'); 
+            finestra.focus(); //Li assignem el focus perquè no s'amagui 
+        } 
+        function redi(){ 
+         finestra.resizeTo(500,500); 
+         finestra.focus(); 
+        } 
+
+        function augmenta(){ 
+         finestra.resizeBy(5,5); finestra.focus(); 
+        } 
+        function mou(){ 
+         finestra.moveTo(100,100); 
+         finestra.focus(); 
+        } 
+        function 
+         mouRel(){ finestra.moveBy(-10,-10); 
+         finestra.focus(); 
+        } 
+        function tancar(){
+          if(finestra!==undefined){            
+            finestra.close()
+            finestra=undefined      
+          }    
+        }
+</script> 
+</head> 
+<body> 
+ <button onclick="obrir()">Crear window</button> 
+ <button onclick="redi()">Redimensionar window</button> 
+ <button onclick="augmenta()">Augmentar mida</button> 
+ <button onclick="mou()">Moure a 100,100 mida</button> 
+ <button onclick="mouRel()">Moure -10, -10</button> 
+ <button onclick="tancar()">Tancar window</button> 
+</body> 
+</html> 

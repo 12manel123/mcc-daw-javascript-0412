@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		var letras = 'TRWAGMYFPDXBNJZSQVHLCKET';
+		dni = prompt('Introduce el número del DNI');
+		letra=dni.charAt(8);
+		numeros=dni.slice(0,8);
+		suma=0
+		for (i=0; i <= 7; i++) {suma=suma+dni.charAt(i);}
+		if (letras.charAt(suma%23)==letra){alert("DNI "+dni+" es valido");}
+		else{alert("DNI "+dni+" no es valido")}
+
+
+
+
+
+
+
+/*
+           var dni, letra_in, letra_calculada;
+
+           function input_dni() {
+
+
+               dni = parseInt(prompt('Introduce el número del DNI'));
+               letra_in = prompt('Introduce la letra').toUpperCase();
+
+
+
+               if ((dni >= 0) && (dni <= 99999999)) {
+                   letra_calculada = letras[dni%23];
+                   if (letra_in == letra_calculada) {
+                   		document.write('resultado').innerHTML = "<p style='color:red;font-size:1.6em'>El dni es " + dni + " con letra " + letra_calculada + '</p>';
+                       document.getElementById('resultado').innerHTML = "<p style='color:red;font-size:1.6em'>El dni es " + dni + " con letra " + letra_calculada + '</p>';
+
+                       alert('El dni es ' + dni + ' con letra ' + letra_calculada);
+                   } else {
+                       alert('La letra ' + letra_in + ' no coincide con la calculada → ' + letra_calculada) ;
+                   }
+               } else {
+                   alert('No es correcto el valor introducido');
+               }
+           }
+           input_dni();*/
+
+
+
+
+
+/*
+		var st="LOREM ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non roident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+		document.write(st.match(/\b\w{1,4}\b/g)[2])+"<br>";
+		document.write(st.replace(/[aeiou]/gi,"u"));
+
+
+		var cadena="Joan Pera menja pera en la sopera";
+		pos1=cadena.search(/pera/i);
+		//alert(pos1);
+
+		//alert(cadena.slice(5,-2));
+
+		//alert(cadena.split("e"));
+
+		alert(cadena.substr(-5,8));
+
+
+		document.write("<p>"+cadena.big()+"</p>");
+
+		//substr(inicio,fin)
+		//substring(desde,hasta)
+
+		var reg=/^([xyz]\-?\d{7}\-?[A-Z]{1})|(\\)/;
+		alert
+*/
+
+
+
+	</script>
+
+</body>
+</html>

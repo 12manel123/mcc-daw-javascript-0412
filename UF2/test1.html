@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style type="text/css">
+	#cos{
+		font-size: 30px;
+
+	}
+</style>
+<body id="cos">
+
+<script type="text/javascript">
+	var cos = document.getElementById('cos');
+	var elMeuArray = ["dl","dm","dc","dj","dv"];
+	elMeuArray.push("ds");
+	elMeuArray.push("dg");
+	var elMeuObjecte ={un:true,"dos":100,"tres":["Bcn","Gir","Lle","Tgn"]}
+	elMeuObjecte.quatre="Catalunya";
+	elMeuObjecte["cinc"]="Element 5"; // es lo mismo pero con []
+	cos.innerHTML=
+	"<pre>" +
+	"elMeuArray[0] val " + elMeuArray[0] + "<br>"+
+	"elMeuArray[1] val " + elMeuArray[1] + "<br>"+
+	"elMeuArray[2] val " + elMeuArray[2] + "<br>"+
+	"elMeuArray["+(elMeuArray.length-1) +"] val " + elMeuArray[elMeuArray.length-1]
+	+ "<br><hr>"+
+	"elMeuObjecte.un val " + elMeuObjecte.un + "<br>"+
+	"elMeuObjecte.dos val " + elMeuObjecte.dos + "<br>"+
+	"elMeuObjecte.tres[1] val " + elMeuObjecte.tres[1] + "<br>"+
+	"elMeuObjecte.quatre val " + elMeuObjecte['quatre'] + "<br>"+
+	"elMeuObjecte.[cinc] val " + elMeuObjecte['cinc'] + "<br><hr>"+
+	"<pre>"
+</script>
+</body>
+</html>

@@ -1,0 +1,294 @@
+ <!DOCTYPE html>
+<html>
+<head>
+	<title>Date</title>
+	<style type="text/css">
+		table,td{
+			  border: 3px solid black;
+		}
+
+	</style>
+</head>
+<body>
+
+<script type="text/javascript">
+
+//----------------------------------------------------EX1-----------------
+	
+
+
+	var funciona=true;
+	function reloj(){
+		var hoy=new Date();
+		var h=hoy.getHours();
+		var m=("0"+hoy.getMinutes()).slice(-2);
+		var s=("0"+hoy.getSeconds()).slice(-2);
+		var d=(hoy.getDate());
+		var y=(hoy.getFullYear());
+		var mesnum= hoy.getMonth()+1;
+		var mestxt="";
+		var dianum=hoy.getDay();
+		var diatxt="";
+
+		if (mesnum==1)mestxt="Enero";
+		else if (mesnum==2)mestxt="Febrero";
+			else if (mesnum==3)mestxt="Marzo";
+				else if (mesnum==4)mestxt="Abril";
+					else if (mesnum==5)mestxt="Mayo";
+						else if (mesnum==6)mestxt="Junio";
+							else if (mesnum==7)mestxt="Julio";
+								else if (mesnum==8)mestxt="Agosto";
+									else if (mesnum==9)mestxt="Septiembre";
+										else if (mesnum==10)mestxt="Octubre";
+											else if (mesnum==11)mestxt="Noviembre";
+												else if (mesnum==12)mestxt="Diciembre";
+
+		if(dianum==0)diatxt="Domingo";
+			else if(dianum==1)diatxt="Lunes";
+				else if(dianum==2)diatxt="Martes";
+					else if(dianum==3)diatxt="Miercoles";
+						else if(dianum==4)diatxt="Jueves";
+							else if(dianum==5)diatxt="Viernes";
+								else if(dianum==6)diatxt="Sabado";
+									else if(dianum==7)diatxt="Domingo";
+
+
+
+		document.getElementById("r").innerHTML=
+		"<br><table><tr><td>"+h+"</td><td>"+m+"</td><td>"+s+"</td><td>"+diatxt+"<br>"+d+"<br>"+mestxt+"</td></tr><tr><td>h</td><td>m</td><td>s</td></tr></table><table><td>"+y+"</td></table>";
+
+
+	}
+	function parar(){
+		if(funciona){
+			clearInterval(mireloj);
+			document.getElementById("boton").value="Reanudar";
+		}
+		else{
+			mireloj=setInterval(reloj,1000);
+			document.getElementById("boton").value="Parar";
+		}
+		funciona=!funciona;
+	}
+
+
+	var mireloj=setInterval(reloj,1000)
+	
+</script>
+	<input type="button" value="Parar" id="boton" onclick="parar()">
+
+<script type="text/javascript">
+	//-------------------------------------------------EX2-----------------
+	
+		bool=false;
+		num1 = prompt("Numero primo?:");
+		for(i=2;i<num1;i++){
+			if((num1%i)==0){
+				alert("No es primo");
+				bool=false;
+				break;
+			}
+			else{bool=true;}
+		}
+		if(bool){
+			alert("Es primo")
+		}
+</script>
+<script type="text/javascript">
+
+	//-------------------------------------------------EX3-----------------
+	
+		function color(){
+			 var x = document.getElementsByTagName("p");
+			 for (i = 0; i < x.length; i++) {
+			 	if(i%2==0){x[i].style.backgroundColor = "red";}
+			 	else x[i].style.backgroundColor = "blue";
+			 }
+		}
+
+
+</script>
+
+
+	<span id="r"></span>
+	<br><br><br>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut.</p>
+
+	<input type="button" value="Color" id="boton" onclick="color()">
+
+
+
+
+
+<script type="text/javascript">
+		//-------------------------------------------------EX4-----------------
+
+function convE(){
+			 alert((document.getElementById("demo").value)*166.386);
+		}
+
+function convP(){
+			 alert((document.getElementById("demo").value)/166.386);
+
+		}
+
+
+</script>
+
+
+	<input type="number" name="euros" id="demo">
+	<input type="button" name="convEs" value="Convertir a Pesetas" onClick="convE()">
+	<input type="button" name="convPs" value="Convertir a Euros" onClick="convP()">
+
+
+<script type="text/javascript">
+
+
+		//-------------------------------------------------EX5-----------------
+ventana=false;
+
+
+function obrir(){
+	if(!ventana){
+		finestra=window.open('ajuda.html','', 'width=300,height=100');
+		ventana=true;
+	}
+	finestra.focus();
+}
+
+function cerar(){
+	if(finestra!==undefined){  
+    	finestra.close();
+        finestra=undefined;
+        ventana=false;
+    }
+}
+			    
+    
+</script>
+<button onclick="obrir()">Ayuda</button> 
+<button onclick="cerar()">Cerrar</button> 
+
+
+
+<script type="text/javascript">
+	
+
+			//-------------------------------------------------EX6-----------------
+
+
+function loteria(){
+	var lots="";
+	for (i=0;i<=10;i++){
+		document.write(parseInt(Math.random(1)*49)+" ");
+	}
+		}
+
+
+
+
+</script>
+ <button onclick="loteria()">Loteria</button> 
+
+
+
+
+
+
+<script type="text/javascript">
+
+
+
+
+
+
+
+				//-------------------------------------------------EX7-----------------
+
+function loter(){
+	var numl =document.getElementById("numl").value;
+	var cant=document.getElementById("cant").value;
+	var guanyat=0;
+	for (var j =0; j < numl; j++) {
+		var nums=document.getElementById("lot").value;
+		var numloteria;
+		guanyat=0;
+		for (i=0;i<3;i++){
+			numloteria=parseInt(Math.random()*9);
+			if(nums.charAt(i)==numloteria){
+				guanyat++;
+			}
+		}
+		if(guanyat==0){alert("Has perdut")}
+		if(guanyat==1){alert("Has recuperat els diners")}
+		if(guanyat==2){alert("Has guanyat "+(cant*5)+"€")}
+		if(guanyat==3){alert("Has guanyat "+(cant*250)+"€")}
+	}
+}
+
+
+
+</script>
+
+
+	Apostes:<input type="number" name="loteria" id="lot">
+	Vegades:<input type="number" name="l" id="numl">
+	Cuantitat:<input type="number" name="cant" id="cant">
+
+
+	<input type="button" name="convEs" value="Convertir a Pesetas" onClick="loter()">
+
+
+<script type="text/javascript">
+
+
+
+
+
+
+				//-------------------------------------------------EX8-----------------
+
+num1 = prompt("Numero nominador:");
+num2 = prompt("Numero denominador:");
+
+for (i=2;i<=num2;i++){
+	if(num1%i==0&&num2%i==0){
+		num1=num1/i;
+		num2=num2/i;
+		alert("Multiplo dividiento de"+i);
+	}
+
+}
+alert("Nominador:"+num1+" Deniminador:"+num2);
+				//-------------------------------------------------EX9-----------------
+
+num1 = prompt("Numero1:");
+num2 = prompt("Numero2:");
+
+for (i=1;i<=num2;i++){
+	if(num1%i==0&&num2%i==0){
+
+		alert("Comú"+i);
+	}
+
+}
+
+
+
+
+
+</script>
+
+
+</body>
+</html>

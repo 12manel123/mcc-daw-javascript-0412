@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@900&family=Pacifico&display=swap" rel="stylesheet"> 
+	<style type="text/css">
+		input,span{
+			font-family: 'Inconsolata', monospace;
+    		font-family: 'Pacifico', cursive;
+		}
+
+	</style>
+</head>
+<body>
+	<script type="text/javascript">/*
+			document.write(navigator.appName+"<br>");
+			document.write(navigator.appCodeName+"<br>");
+			document.write(navigator.appVersion+"<br>");
+			document.write(navigator.cookieEnabled+"<br>");
+			document.write(navigator.platform+"<br>");
+			document.write(navigator.userAgent+"<br>");
+for(prop in window.navigator){
+	document.write(prop+" = "+window.navigator[prop]+"<br>");
+}
+document.write(screen.availWidth);
+*/
+
+var mensa="Autobus a Torreforta, próxima salida  ---  ";
+var mireloj=setInterval(reloj,0)
+function reloj(){
+	mensa=mensa.substr(1)+mensa.charAt(0);
+	document.getElementById("r").innerHTML=mensa;
+
+}
+
+
+
+
+	</script>
+	<span id="r">Autobus a Torreforta, próxima salida  ---  
+	</span>
+</body>
+</html>

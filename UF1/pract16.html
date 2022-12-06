@@ -1,0 +1,27 @@
+ <!DOCTYPE html>
+<html>
+<head>
+	<title>Date</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var today = new Date();
+		document.write("Dia: " + today.getDate()+"<br>");
+		document.write("Domingo es 0, Lunes es 1 ... hoy es: " + today.getDay()+"<br>");
+		document.write("Año: " + today.getFullYear()+"<br>");
+		document.write("Hora: " + today.getHours()+"<br>");
+		document.write("Minuto: " + today.getMinutes()+"<br>");
+		document.write("Segundo: " + today.getSeconds()+"<br>");
+		document.write("Milisegundos: " + today.getMilliseconds()+"<br>");
+		document.write("Fecha: " + today.getTime()+"<br>");
+		today.setTime(8393987272212);
+		document.write("Fecha sin sentido: " + today.getTime()+"<br>");
+		document.write("Año ridículo: " + today.getFullYear()+"<br>");
+		document.write("Mes: " + today.getMonth()+"<br>");
+		today.setMonth(12);
+		document.write("Mes 12: " + today.getMonth()+"<br>");
+		today.setMonth(13);
+		document.write("Mes 13: " + today.getMonth()+"<br>");
+	</script>
+</body>
+</html>

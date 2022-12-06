@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	
+	function mida(metres,centimetres){		
+		this.metres = metres;
+		this.centimetres = centimetres;
+		this.normalitzar= function(){			
+			
+			while(this.centimetres>=100){
+				this.metres = this.metres+1;
+				this.centimetres = this.centimetres-100;
+			}
+/*
+			for (i=this.centimetres; i>=100;i=i-100){
+				this.metres = this.metres+1;
+				this.centimetres = this.centimetres-100;
+			}
+			*/
+			alert("Metres: "+this.metres+"\nCentimetres:"+this.centimetres);
+
+		};
+	}
+	var mida1 = new mida(2,340);
+	var mida2 ={metres:2,centimetres:120}
+
+
+	function normalitzar(){
+		mida1.normalitzar(mida1);
+
+	}
+
+	var dau1;
+	var dau2;
+	var suma = new Array(20);
+	for(i=0;i<20;i++){
+		dau1 =Math.floor(Math.random() * 6+1);
+		dau2 =Math.floor(Math.random() * 6+1);
+		suma[i]= dau1+dau2;
+	}
+	suma.sort();
+	alert(suma);
+	max=0;
+	nou=0;
+	sumaG=0;
+	for(i=0;i<20;i++){
+		if(suma[i]==suma[i+1]){
+			nou++;
+			if(nou>max){max=nou;}
+		}
+		else if(max>=nou && suma[i]==suma[i+1]){
+			nou++;
+		}
+		else if(suma!=suma[i+1]){
+			nou++;
+			if(nou>max){max=nou;sumaG = suma[i]}
+			nou =0;
+		}
+	}
+	alert("Suma amb mes sortides és: "+sumaG);
+
+
+
+
+
+
+
+
+
+
+</script>
+<input type="button" name="EE" onclick="normalitzar()">
+</body>
+</html>

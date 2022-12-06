@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TEST EXAMEN1</title>
+</head>
+<body>
+<script type="text/javascript">
+	
+	//Encriptar -> https://www.javascriptobfuscator.com/Javascript-Obfuscator.aspx----------------------------
+	var _0xf17e=["\x48\x6F\x6C\x61"];alert(_0xf17e[0]);
+
+
+	//Tipus date -> ----------------------------------------------------------------------------------------
+	var today = new Date();
+		document.write("Dia: " + today.getDate()+"<br>");
+		document.write("Domingo es 0, Lunes es 1 ... hoy es: " + today.getDay()+"<br>");
+		document.write("Año: " + today.getFullYear()+"<br>");
+		document.write("Hora: " + today.getHours()+"<br>");
+		document.write("Minuto: " + today.getMinutes()+"<br>");
+		document.write("Segundo: " + today.getSeconds()+"<br>");
+		document.write("Milisegundos: " + today.getMilliseconds()+"<br>");
+		document.write("Fecha: " + today.getTime()+"<br>");
+		today.setTime(8393987272212);
+		document.write("Fecha sin sentido: " + today.getTime()+"<br>");
+		document.write("Año ridículo: " + today.getFullYear()+"<br>");
+		document.write("Mes: " + today.getMonth()+"<br>");
+		today.setMonth(12);
+		document.write("Mes 12: " + today.getMonth()+"<br>");
+		today.setMonth(13);
+		document.write("Mes 13: " + today.getMonth()+"<br>");
+
+	//Modificaciones de document -> ---------------------------------------------------------------------------
+		document.write("Ultima modificacion:"+document.lastModified);
+
+
+	//Variables y pedir-> ---------------------------------------------------------------------------
+		prompt("Ciudad","Tarragona"); //Para pedir texto con un valor ya dentro
+
+	
+		num1=parseInt(prompt("Entra num")) //Para pedir numero
+		
+		for (i=0;i<num1;i++){ //Utilitzar fors
+			alert("Numero "+i);
+		}
+		
+		switch(num1){ // Utilitzar switch
+		case 0:
+			resultat="Zero";
+			break;
+		case 1:
+			resultat="Un"
+			break;
+		case 2:
+			resultat="Dos"
+			break;
+		default:
+			resultat="Altes"
+}
+		alert(resultat)
+		
+
+		alert(typeof(num1));// Para saver que tipo de variable es
+
+		res=confirm("Tas atontao??");
+		alert (res);
+
+		//&& todos iguales
+		//|| or solo uno verdadero
+		//!  negación
+		//^	 xor, es or, pero si cumplen los 2 es falso
+
+		alert(num1+"\r esto es un numero"); //poner un intro
+
+		var random=parseInt(Math.random(1, 100)*100); // Valor random entre el 1 al 100
+
+	//Variables matematicas -> ------------------------------------------
+
+		alert(Math.pow(16,2));//"potencia de 16")
+		alert (16**3);//"potencia de 16 a la 3")
+		alert(Math.pow(16,1/2));//"raiz de 16")
+		alert (27**(1/3));//"raiz de 27 a la 3")
+		alert (Math.sqrt(16));//"raiz de 16")
+
+		var v=2.678;
+		alert(Math.ceil(v));
+		alert(Math.floor(v));
+		alert(Math.exp(v));
+		alert(Math.log(v));
+		alert(Math.max(2,5,7,2,4));
+		alert(Math.round(v));
+		alert(Math.exp(v));
+		alert(Math.pow(v,3));
+		alert(Math.sqrt(v));
+		alert(Math.round(Math.random(1,6)*6+1));
+		alert(Number.MAX_VALUE);
+
+		var num=Math.PI;
+		document.write("Valor pi: "+num+"<br>");
+		document.write("To exponential: "+num.toExponential(5)+"<br>")
+		document.write("To Fixed: "+num.toFixed(3)+"<br>")
+		document.write("To Precision: "+num.toPrecision(3)+"<br>")
+		document.write("To String: "+num.toString(3)+"<br>")
+		document.write("Value: "+num.valueOf(32)+"<br>")
+
+
+		var fi=parseInt(prompt("Fila inicial"));
+		var ci=parseInt(prompt("Columna inicial"));
+		var ff=parseInt(prompt("Fila final"));
+		var cf=parseInt(prompt("Fila final"));
+								
+		if (Math.abs(fi-ff)==1&&Math.abs(ci-cf)==2||Math.abs(fi-ff)==2&&Math.abs(ci-cf)==1){ //abs permite hacer el calculo sin negativo
+			alert("Jugada correcta");
+		}
+		else {	
+			alert("Jugada incorrecte");}
+
+
+		//Datos de navegador y pantalla -> ----------------------------------------------------------
+
+
+		document.write(navigator.appName+"<br>");
+			document.write(navigator.appCodeName+"<br>");
+			document.write(navigator.appVersion+"<br>");
+			document.write(navigator.cookieEnabled+"<br>");
+			document.write(navigator.platform+"<br>");
+			document.write(navigator.userAgent+"<br>");
+		for(prop in window.navigator){
+			document.write(prop+" = "+window.navigator[prop]+"<br>");
+		}
+		document.write(screen.availWidth);
+
+		//Caracteres posicion -> ----------------------------------------------------------------------
+
+		var cadena="Hola ManolA";
+		var c1="Pepa";
+		document.write(cadena.length+"<br>")
+		document.write(cadena.charAt(0)+"<br>")
+		document.write(cadena.charCodeAt(0)+"<br>")
+		document.write(cadena.concat(c1)+"<br>")
+		document.write(String.fromCharCode(65,66,67)+"<br>")
+		document.write(cadena.indexOf("M")+"<br>")
+		document.write(cadena.replace(/a/g,"o")+"<br>")
+
+		var mail="m.lar.a@nimail.com";  // Posicion apartir de filtraje de caracter
+			var ar=mail.indexOf("@");
+			alert(ar);
+			alert(mail.indexOf(".",ar));
+
+
+
+		//Tiempo + cosicion -----------------------------------------------------------------
+
+		var mensa="Autobus a Torreforta, próxima salida  ---  ";
+		var mireloj=setInterval(reloj,100)
+			function reloj(){
+				mensa=mensa.substr(1)+mensa.charAt(0);
+				document.getElementById("r").innerHTML=mensa;
+
+			}
+			</script>
+		
+		<span id="r">Autobus a Torreforta, próxima salida  ---  </span>
+		<br>
+
+
+			<script type="text/javascript">
+		//Funciones
+
+		function color(){
+			 var x = document.getElementsByTagName("p");
+			 for (i = 0; i < x.length; i++) {
+			 	if(i%2==0){x[i].style.backgroundColor = "red";}
+			 	else x[i].style.backgroundColor = "blue";
+			 }
+		}
+
+
+		//Funciones + ventanas --------------------------------------------------------------------------
+
+function obrir(){ 
+         finestra=window.open('','', 'width=300,height=100'); 
+            finestra.focus(); //Li assignem el focus perquè no s'amagui 
+        } 
+        function redi(){ 
+         finestra.resizeTo(500,500); 
+         finestra.focus(); 
+        } 
+
+        function augmenta(){ 
+         finestra.resizeBy(5,5); finestra.focus(); 
+        } 
+        function mou(){ 
+         finestra.moveTo(100,100); 
+         finestra.focus(); 
+        } 
+        function 
+         mouRel(){ finestra.moveBy(-10,-10); 
+         finestra.focus(); 
+        } 
+        function tancar(){
+          if(finestra!==undefined){            
+            finestra.close()
+            finestra=undefined      
+          }    
+        }
+</script> 
+
+
+ <button onclick="obrir()">Crear window</button> 
+ <button onclick="redi()">Redimensionar window</button> 
+ <button onclick="augmenta()">Augmentar mida</button> 
+ <button onclick="mou()">Moure a 100,100 mida</button> 
+ <button onclick="mouRel()">Moure -10, -10</button> 
+ <button onclick="tancar()">Tancar window</button> 
+<input type="button" value="Color" id="boton" onclick="color()">
+
+
+<h1>Titulo 1</h1>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur.</p>
+</body>
+</html>

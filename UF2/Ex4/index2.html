@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	function personage(nombre,genero,lv,armas){
+		this.nombre=nombre;
+		this.genero=genero;
+		this.lv=lv;
+		this.armas=armas;
+		this.subirNivel=function(lv){this.lv=this.lv+1; alert(this.lv)};
+		this.verCaracteristicas=function(lv){alert(this.lv)};
+		this.verArmas=function(lv){alert(personage1.armas[0].nombre)};
+
+	}
+	function armas(id,nombre,ataque,defensa){
+		this.id=id;
+		this.nombre=nombre;
+		this.ataque=ataque;
+		this.defensa=defensa;
+		this.subirAtaque=function(ataque){this.ataque=this.ataque+Math.floor(Math.random() * 5);alert(this.ataque)};
+		this.subirDefensa=function(defensa){this.defensa=this.defensa+Math.floor(Math.random() * 5);alert(this.defensa)};
+	}
+
+	var arma1 = new armas(1,"Hacha",34,84);
+	var arma2 = new armas(2,"Espada",58,4);
+	var arma3 = {id:3,nombre:"Katanas",ataque:94,defensa:3};
+	var personage1 = new personage("Pepe","Hombre",6,[arma1,arma2,arma3]);
+	var personage2 = new personage("Mimy","Mujer",1,[arma3]);
+	var personage3 ={nombre:"Merry",genero:"Barco",lv:600,armas:[arma1,arma3]};
+
+</script>
+
+<input type="button" name="boton" value="-> Ver diagrama de clase personage 1" onclick="personage1.verCaracteristicas()"></div><br>
+<input type="button" name="boton" value="-> Subir LV personage 1" onclick="personage1.subirNivel()"></div><br>
+<input type="button" name="boton" value="-> Subir ataque hacha" onclick="arma1.subirAtaque()"></div><br>
+<input type="button" name="boton" value="-> Subir defensa hacha" onclick="arma1.subirDefensa()"></div><br>
+<input type="button" name="boton" value="-> Ver arma de personage 1" onclick="personage1.verArmas()"></div><br>
+<input type="button" name="boton" value="-> Mostrar ataque de katanas" onclick="alert(arma3.ataque)"></div><br>
+<input type="button" name="boton" value="-> Mostrar nombre de personage3" onclick="alert(personage3.nombre)"></div><br>
+
+
+</body>
+</html>

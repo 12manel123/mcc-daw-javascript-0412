@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	
+	var nCas
+	var Cas1
+	while(true){
+		nCas=parseInt(prompt("Numero: "));
+		if(nCas%2==0){
+			alert ("Malo");
+		}
+		else{
+			var magic = new Array(nCas);
+			
+			for (i=0;i<nCas;i++){
+				magic[i]=new Array(nCas);
+			}
+			Cas1=parseInt(nCas/2);
+			break;
+		}
+	}
+
+ 
+	var col=Cas1;
+	var fil=0;
+	var filaTemp;
+	var columnaTemp;
+	for(x=1;x<=(nCas*nCas);x++){
+		magic[fil][col]=x;
+
+		filaTemp=fil-1; 
+		columnaTemp=col+1;
+		if(filaTemp==-1)
+			filaTemp=nCas-1;
+		if(columnaTemp==nCas)
+			columnaTemp=0;
+		if(magic[filaTemp][columnaTemp]!=undefined)
+			fil+=1;
+		else{
+			fil=filaTemp
+			col=columnaTemp
+		}
+	}
+	
+	
+	
+
+
+
+
+	document.write('<table border="1">');
+	
+	for (i=0;i<magic.length;i++){
+		document.write("<tr>");
+		for (i2=0;i2<magic[i].length;i2++){
+			document.write("<td>");
+			document.write(magic[i][i2]);
+			document.write("</td>");
+		}
+		document.write("</tr>");
+	}
+	document.write("</table>")
+	
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Validar DNI</title>
+</head>
+<body>
+<script type="text/javascript">
+		var letras = 'TRWAGMYFPDXBNJZSQVHLCKET';
+		dni = prompt('Introduce el número del DNI');
+
+		if(dni.charAt(0)=="X")
+		dni = "0"+dni.slice(1,9);
+		if(dni.charAt(0)=="Y") 
+		dni = "1"+dni.slice(1,9);
+		if(dni.charAt(0)=="Z") 
+		dni = "2"+dni.slice(1,9);
+		
+		letra=dni.charAt(8);
+		numeros=dni.slice(0,8);
+		suma=0;
+		for (i=0; i <= 7; i++) {suma=suma+dni.charAt(i);}
+		if (letras.charAt(suma%23)==letra){alert("DNI es valido");}
+		else{alert("DNI/NIE no es valido");}
+	
+</script>
+</body>
+</html>
